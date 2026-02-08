@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Headings with Hedvig Letters Serif */
+  h1 {
+    @apply font-serif;
+  }
+  h2 {
+    @apply font-serif;
+  }
+  h3 {
+    @apply font-serif;
+  }
+  /* H4 and below use Inter (default sans) */
+  h4, h5, h6 {
+    @apply font-sans;
+  }
+  /* Body text */
+  body {
+    @apply font-sans;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* WhatsApp button animation */
+@keyframes pulse-whatsapp {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-whatsapp {
+  animation: pulse-whatsapp 2s ease-in-out infinite;
+}
+
+/* Chat bubble styles for testimonials */
+.chat-bubble {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 85%;
+}
+
+.chat-bubble-client {
+  background-color: #dcf8c6;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-bubble-mmre {
+  background-color: #ffffff;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}

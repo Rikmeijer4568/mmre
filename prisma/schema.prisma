@@ -1,0 +1,266 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==================== AUTH ====================
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String?
+  role          UserRole  @default(EDITOR)
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  assignedLeads Lead[]    @relation("AssignedLeads")
+  leadNotes     LeadNote[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum UserRole {
+  ADMIN
+  EDITOR
+}
+
+// ==================== CRM - LEADS ====================
+
+model Lead {
+  id          String     @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  leadType    LeadType
+  source      LeadSource
+  sourcePage  String?
+  status      LeadStatus @default(NEW)
+
+  // Calculator fields (for Rent Out leads)
+  address     String?
+  city        String?
+  propertyType String?
+  size        Int?
+  bedrooms    Int?
+  furnished   Boolean?
+  availableFrom DateTime?
+  desiredRent Int?
+  estimatedRent String?
+
+  // Relations
+  assignedToId String?
+  assignedTo   User?      @relation("AssignedLeads", fields: [assignedToId], references: [id])
+  notes        LeadNote[]
+  events       LeadEvent[]
+
+  // UTM tracking
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([status])
+  @@index([leadType])
+  @@index([source])
+  @@index([createdAt])
+}
+
+model LeadNote {
+  id        String   @id @default(cuid())
+  content   String   @db.Text
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model LeadEvent {
+  id        String   @id @default(cuid())
+  type      String   // created, status_change, note_added, assigned
+  details   String?
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+enum LeadType {
+  TENANT
+  LANDLORD
+  GENERAL
+}
+
+enum LeadSource {
+  RENT_IN_WHATSAPP
+  RENT_IN_PDF
+  RENT_OUT_CALCULATOR
+  CONTACT_FORM
+  NEWSLETTER
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  IN_PROGRESS
+  WON
+  LOST
+}
+
+// ==================== NEWSLETTER ====================
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+// ==================== CMS - CONTENT ====================
+
+model PageContent {
+  id        String   @id @default(cuid())
+  page      String   // home, rent-in, rent-out, about, faq, contact
+  section   String   // hero, how-it-works, etc.
+  key       String   // headline, subheadline, cta_text, etc.
+  value     String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([page, section, key])
+}
+
+model Neighborhood {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String   @db.Text
+  longDescription String? @db.Text
+  image       String?
+  order       Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String              @id @default(cuid())
+  name      String
+  avatar    String?
+  label     String?             // e.g., "Expat from UK", "Landlord in Jordaan"
+  rating    Int?
+  messages  TestimonialMessage[]
+  order     Int                 @default(0)
+  isPublished Boolean           @default(true)
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+}
+
+model TestimonialMessage {
+  id            String      @id @default(cuid())
+  content       String      @db.Text
+  isFromClient  Boolean     @default(true) // true = client message, false = MMRE response
+  timestamp     String?     // Display timestamp like "10:32 AM"
+  testimonialId String
+  testimonial   Testimonial @relation(fields: [testimonialId], references: [id], onDelete: Cascade)
+  order         Int         @default(0)
+}
+
+model FAQ {
+  id          String   @id @default(cuid())
+  question    String
+  answer      String   @db.Text
+  category    String?  // general, tenants, landlords
+  order       Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  icon        String?  // Icon name from lucide-react
+  order       Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Stat {
+  id        String   @id @default(cuid())
+  page      String   // home, rent-in, rent-out, about
+  label     String   // e.g., "Satisfied Clients"
+  value     String   // e.g., "500+"
+  icon      String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Download {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  fileName    String
+  filePath    String
+  isGated     Boolean  @default(false) // true = requires email
+  downloads   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ==================== SETTINGS ====================
+
+model Settings {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String @db.Text
+}
+
+// ==================== ANALYTICS ====================
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  type      String   // whatsapp_click, pdf_download, form_submit, calculator_submit
+  page      String
+  metadata  String?  @db.Text // JSON string with additional data
+  createdAt DateTime @default(now())
+
+  @@index([type])
+  @@index([createdAt])
+}

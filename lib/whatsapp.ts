@@ -1,0 +1,93 @@
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+31612345678'
+
+export const whatsappTemplates = {
+  rentIn: `Hi MMRE, I'm looking for a rental home.
+Budget: €... per month
+Preferred areas: ...
+Move-in date: ...
+Bedrooms: ...
+Additional wishes: ...`,
+
+  rentOut: `Hi MMRE, I want to rent out my property.
+Address/area: ...
+Property type: ...
+Size: ... m²
+Bedrooms: ...
+Available from: ...
+Furnished: yes/no`,
+
+  general: `Hi MMRE, I have a question about your services.`,
+
+  homeFinding: `Hi MMRE, I'm interested in your Home Finding service.
+I'm looking for a rental home in Amsterdam.
+Budget: €... per month
+Preferred neighborhoods: ...
+Move-in date: ...
+Bedrooms: ...
+Family size: ...`,
+
+  relocation: `Hi MMRE, I'm relocating to the Netherlands and need support.
+Moving from: ...
+Company/employer: ...
+Expected move date: ...
+Family members: ...
+Services needed: housing / immigration / settling-in / all`,
+
+  corporate: `Hi MMRE, I'm looking for corporate relocation services.
+Company name: ...
+Number of employees to relocate: ...
+Origin countries: ...
+Timeline: ...
+Services needed: ...`,
+
+  immigration: `Hi MMRE, I need immigration support.
+Nationality: ...
+Permit type needed: work permit / highly skilled migrant / other
+Current status: ...
+Timeline: ...`,
+
+  // Landlord services
+  wws: `Hi MMRE, I need a WWS point calculation for my rental property.
+Address: ...
+Type property: apartment / house / studio
+Current rent: €...
+Regulated or unregulated: ...`,
+
+  energielabel: `Hi MMRE, I need an energy label for my rental property.
+Address: ...
+Type property: apartment / house
+Current energy label (if known): ...
+Reason: rental / sale / other`,
+
+  nen2580: `Hi MMRE, I need a NEN 2580 measurement for my property.
+Address: ...
+Type property: apartment / house
+Reason: rental / energy label / WWS / other`,
+
+  verhuurCompliance: `Hi MMRE, I'm interested in the Rental Compliance service.
+Address: ...
+Type property: apartment / house
+Current status: rented / to be rented
+Services needed: NEN 2580 + Energy Label + WWS (full package)`,
+
+  verduurzaming: `Hi MMRE, I want sustainability advice for my rental property.
+Address: ...
+Current energy label: ...
+Goal: improve WWS score / reduce costs / future-proof / other`,
+}
+
+export type WhatsAppTemplate = keyof typeof whatsappTemplates
+
+export function getWhatsAppLink(template: WhatsAppTemplate = 'general'): string {
+  const message = encodeURIComponent(whatsappTemplates[template])
+  const phone = WHATSAPP_NUMBER.replace(/[^0-9]/g, '')
+  return `https://wa.me/${phone}?text=${message}`
+}
+
+export function getWhatsAppNumber(): string {
+  return WHATSAPP_NUMBER
+}
+
+export function getQRCodeData(template: WhatsAppTemplate = 'rentIn'): string {
+  return getWhatsAppLink(template)
+}
