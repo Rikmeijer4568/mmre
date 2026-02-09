@@ -101,9 +101,25 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true, leadId: lead.id })
   } catch (error) {
-    console.error('Failed to create lead:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    const errorStack = error instanceof Error ? error.stack : undefined
+
+    console.error('Failed to create lead:', {
+      message: errorMessage,
+      stack: errorStack,
+      error: error,
+    })
+
+    // In development, return detailed error info
+    const isDev = process.env.NODE_ENV === 'development'
     return NextResponse.json(
-      { error: 'Failed to create lead' },
+      {
+        error: 'Failed to create lead',
+        ...(isDev && {
+          details: errorMessage,
+          stack: errorStack
+        })
+      },
       { status: 500 }
     )
   }
@@ -154,9 +170,24 @@ export async function GET(request: NextRequest) {
       },
     })
   } catch (error) {
-    console.error('Failed to fetch leads:', error)
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    const errorStack = error instanceof Error ? error.stack : undefined
+
+    console.error('Failed to fetch leads:', {
+      message: errorMessage,
+      stack: errorStack,
+      error: error,
+    })
+
+    const isDev = process.env.NODE_ENV === 'development'
     return NextResponse.json(
-      { error: 'Failed to fetch leads' },
+      {
+        error: 'Failed to fetch leads',
+        ...(isDev && {
+          details: errorMessage,
+          stack: errorStack
+        })
+      },
       { status: 500 }
     )
   }
