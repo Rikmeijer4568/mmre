@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+31612345678'
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+31202101694'
 
 export const whatsappTemplates = {
   rentIn: `Hi MMRE, I'm looking for a rental home.

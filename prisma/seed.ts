@@ -129,7 +129,7 @@ async function main() {
 
   // Create settings
   const settings = [
-    { key: 'whatsapp_number', value: '+31612345678' },
+    { key: 'whatsapp_number', value: '+31202101694' },
     { key: 'contact_email', value: 'info@mmre.nl' },
     { key: 'notification_email', value: 'team@mmre.nl' },
     { key: 'office_address', value: 'Amsterdam, Netherlands' },

@@ -113,7 +113,7 @@ export function ContactForm() {
           id="phone"
           name="phone"
           type="tel"
-          placeholder="+31 6 12345678"
+          placeholder="+31 20 210 1694"
           value={formData.phone}
           onChange={handleChange}
         />

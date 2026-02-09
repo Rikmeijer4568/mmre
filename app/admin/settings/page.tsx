@@ -9,7 +9,7 @@ import { Save, MessageCircle, Mail, Globe, Shield } from 'lucide-react'
 
 export default function SettingsPage() {
   const [settings, setSettings] = useState({
-    whatsappNumber: '+31612345678',
+    whatsappNumber: '+31202101694',
     contactEmail: 'info@mmre.nl',
     notificationEmail: 'team@mmre.nl',
     officeAddress: 'Amsterdam, Netherlands',
@@ -59,7 +59,7 @@ export default function SettingsPage() {
               <Input
                 value={settings.whatsappNumber}
                 onChange={(e) => setSettings({ ...settings, whatsappNumber: e.target.value })}
-                placeholder="+31612345678"
+                placeholder="+31202101694"
               />
               <p className="text-xs text-gray-500 mt-1">
                 Include country code (e.g., +31 for Netherlands)

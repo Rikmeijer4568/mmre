@@ -43,7 +43,7 @@ export default async function ContactPage() {
                         rel="noopener noreferrer"
                         className="text-whatsapp hover:underline font-medium"
                       >
-                        +31 6 12345678
+                        +31 20 210 1694
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
                         {t('averageResponse')}
