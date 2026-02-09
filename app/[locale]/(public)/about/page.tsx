@@ -49,11 +49,11 @@ export default async function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-accent to-accent-dark text-white py-20">
+      <section className="bg-gradient-to-br from-accent to-accent-dark text-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold">{t('title')}</h1>
-            <p className="mt-6 text-xl text-gray-200">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold">{t('title')}</h1>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-200">
               {t('subtitle')}
             </p>
           </div>
@@ -61,12 +61,12 @@ export default async function AboutPage() {
       </section>
 
       {/* Who We Are */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">{t('whoWeAre')}</h2>
-              <p className="mt-6 text-lg text-gray-600">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('whoWeAre')}</h2>
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600">
                 {t('whoWeAreText1')}
               </p>
               <p className="mt-4 text-lg text-gray-600">
@@ -99,11 +99,11 @@ export default async function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10 sm:py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900">{t('ourMission')}</h2>
-            <p className="mt-6 text-lg text-gray-600">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('ourMission')}</h2>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600">
               {t('ourMissionText')}
             </p>
           </div>
@@ -111,20 +111,20 @@ export default async function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">{t('ourValues')}</h2>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('ourValues')}</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {values.map((value, idx) => (
               <Card key={idx} className="text-center">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="h-8 w-8 text-accent" />
+                <CardContent className="p-4 sm:p-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary-50 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <value.icon className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-gray-600 text-sm">{value.description}</p>
+                  <h3 className="text-base sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">{value.title}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -133,14 +133,14 @@ export default async function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center bg-accent text-white rounded-3xl p-12">
-            <h2 className="text-3xl font-bold">{t('readyToWork')}</h2>
-            <p className="mt-4 text-xl text-gray-200 max-w-2xl mx-auto">
+          <div className="text-center bg-accent text-white rounded-2xl sm:rounded-3xl p-6 sm:p-12">
+            <h2 className="text-2xl sm:text-3xl font-bold">{t('readyToWork')}</h2>
+            <p className="mt-3 sm:mt-4 text-base sm:text-xl text-gray-200 max-w-2xl mx-auto">
               {t('readyToWorkText')}
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <Button size="lg" className="bg-white text-accent hover:bg-gray-100" asChild>
                 <Link href="/contact">{tCommon('contactUs')}</Link>
               </Button>

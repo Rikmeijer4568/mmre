@@ -68,37 +68,37 @@ export default async function FAQPage() {
   ]
 
   return (
-    <div className="py-16">
+    <div className="py-10 sm:py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900">{t('title')}</h1>
-          <p className="mt-4 text-lg text-gray-600">
+        <div className="text-center mb-10 sm:mb-16">
+          <h1 className="text-2xl sm:text-4xl font-bold text-gray-900">{t('title')}</h1>
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">
             {t('subtitle')}
           </p>
         </div>
 
         {/* General */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('generalTitle')}</h2>
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{t('generalTitle')}</h2>
           <FAQAccordion faqs={generalFAQs} />
         </div>
 
         {/* For Tenants */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('tenantsTitle')}</h2>
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{t('tenantsTitle')}</h2>
           <FAQAccordion faqs={tenantFAQs} />
         </div>
 
         {/* For Landlords */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('landlordsTitle')}</h2>
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">{t('landlordsTitle')}</h2>
           <FAQAccordion faqs={landlordFAQs} />
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16 p-8 bg-gray-50 rounded-2xl">
-          <h3 className="text-xl font-semibold text-gray-900 mb-4">
+        <div className="text-center mt-10 sm:mt-16 p-5 sm:p-8 bg-gray-50 rounded-xl sm:rounded-2xl">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
             {t('stillQuestions')}
           </h3>
           <p className="text-gray-600 mb-6">

@@ -27,7 +27,7 @@ export function ServiceHero({
   secondaryCtaHref,
 }: ServiceHeroProps) {
   return (
-    <section className="relative bg-accent text-white py-20 lg:py-28">
+    <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav className="flex items-center gap-1 text-sm text-gray-300 mb-6">
@@ -45,8 +45,8 @@ export function ServiceHero({
           </nav>
         )}
         <div className="max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight">{title}</h1>
-          <p className="mt-6 text-xl text-gray-200">{subtitle}</p>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">{title}</h1>
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-200">{subtitle}</p>
           {(ctaLabel || secondaryCtaLabel) && (
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               {ctaLabel && ctaHref && (

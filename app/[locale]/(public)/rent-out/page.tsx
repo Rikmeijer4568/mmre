@@ -80,12 +80,12 @@ export default async function RentOutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-accent to-accent-dark text-white py-20 lg:py-28">
+      <section className="relative bg-gradient-to-br from-accent to-accent-dark text-white py-12 sm:py-16 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl font-bold leading-tight">{t('title')}</h1>
-              <p className="mt-6 text-xl text-gray-200">{t('subtitle')}</p>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">{t('title')}</h1>
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-200">{t('subtitle')}</p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-white text-accent hover:bg-gray-100" asChild>
                   <a href="#calculator">
@@ -122,11 +122,11 @@ export default async function RentOutPage() {
       </section>
 
       {/* Calculator Section */}
-      <section id="calculator" className="py-20 bg-gray-50">
+      <section id="calculator" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">{t('freeRentalEstimate')}</h2>
-            <p className="mt-4 text-lg text-gray-600">{t('freeRentalEstimateText')}</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('freeRentalEstimate')}</h2>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">{t('freeRentalEstimateText')}</p>
           </div>
           <div className="max-w-2xl mx-auto">
             <RentalCalculator />
@@ -135,24 +135,24 @@ export default async function RentOutPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">{t('ourProcess')}</h2>
-            <p className="mt-4 text-lg text-gray-600">{t('ourProcessSubtitle')}</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('ourProcess')}</h2>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">{t('ourProcessSubtitle')}</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-highlight rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <step.icon className="h-8 w-8 text-accent" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-highlight rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <step.icon className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
                   </div>
-                  <span className="inline-block px-3 py-1 bg-highlight text-accent text-xs font-medium rounded-full mb-3">
+                  <span className="inline-block px-2 sm:px-3 py-1 bg-highlight text-accent text-xs font-medium rounded-full mb-2 sm:mb-3">
                     {tCommon('step')} {idx + 1}
                   </span>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
+                  <h3 className="text-sm sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">{step.title}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm hidden sm:block">{step.description}</p>
                 </div>
               </div>
             ))}
@@ -161,21 +161,21 @@ export default async function RentOutPage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">{t('whatWeOffer')}</h2>
-            <p className="mt-4 text-lg text-gray-600">{t('whatWeOfferSubtitle')}</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('whatWeOffer')}</h2>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">{t('whatWeOfferSubtitle')}</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
             {services.map((service, idx) => (
               <Card key={idx} className="hover:shadow-md transition-shadow">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-highlight rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="h-6 w-6 text-accent" />
+                <CardContent className="p-4 sm:p-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-highlight rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                    <service.icon className="h-5 w-5 sm:h-6 sm:w-6 text-accent" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600">{service.description}</p>
+                  <h3 className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">{service.title}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 hidden sm:block">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -184,21 +184,21 @@ export default async function RentOutPage() {
       </section>
 
       {/* Compliance Services Section */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-block px-4 py-1 bg-highlight text-accent text-sm font-medium rounded-full mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="inline-block px-3 sm:px-4 py-1 bg-highlight text-accent text-xs sm:text-sm font-medium rounded-full mb-3 sm:mb-4">
               {t('requirementsCompliance')}
             </span>
-            <h2 className="text-3xl font-bold text-gray-900">{t('servicesForLandlords')}</h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">{t('servicesForLandlordsText')}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('servicesForLandlords')}</h2>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">{t('servicesForLandlordsText')}</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {complianceServices.map((service, idx) => (
               <Link
                 key={idx}
                 href={service.href}
-                className={`block rounded-xl p-6 border-2 transition-all group hover:shadow-lg ${
+                className={`block rounded-xl p-4 sm:p-6 border-2 transition-all group hover:shadow-lg ${
                   service.highlighted
                     ? 'border-accent bg-highlight/30'
                     : 'border-gray-100 bg-white hover:border-accent/30'
@@ -227,13 +227,13 @@ export default async function RentOutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-accent text-white">
+      <section className="py-10 sm:py-16 bg-accent text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, idx) => (
               <div key={idx} className="text-center">
-                <p className="text-4xl font-bold">{stat.value}</p>
-                <p className="text-gray-200 mt-2">{stat.label}</p>
+                <p className="text-2xl sm:text-4xl font-bold">{stat.value}</p>
+                <p className="text-gray-200 mt-1 sm:mt-2 text-xs sm:text-base">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -241,11 +241,11 @@ export default async function RentOutPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">{t('faqTitle')}</h2>
-            <p className="mt-4 text-lg text-gray-600">{t('faqSubtitle')}</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('faqTitle')}</h2>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">{t('faqSubtitle')}</p>
           </div>
           <div className="max-w-3xl mx-auto">
             <FAQAccordion faqs={faqs} />
@@ -254,12 +254,12 @@ export default async function RentOutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-highlight">
+      <section className="py-12 sm:py-16 lg:py-20 bg-highlight">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900">{t('readyToStart')}</h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">{t('readyToStartText')}</p>
-            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('readyToStart')}</h2>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">{t('readyToStartText')}</p>
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <Button size="lg" asChild>
                 <a href="#calculator">
                   <Calculator className="mr-2 h-5 w-5" />

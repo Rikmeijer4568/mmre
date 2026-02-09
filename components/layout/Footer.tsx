@@ -15,8 +15,8 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 sm:gap-12">
           {/* Brand & Newsletter */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
@@ -58,17 +58,17 @@ export function Footer() {
         </div>
 
         {/* Contact & Bottom */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
               <a
                 href="mailto:info@mmre.nl"
                 className="inline-flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors"
               >
-                <Mail className="h-4 w-4" />
+                <Mail className="h-4 w-4 flex-shrink-0" />
                 info@mmre.nl
               </a>
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 {socialLinks.map((link) => (
                   <a
                     key={link.name}

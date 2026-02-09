@@ -11,14 +11,14 @@ async function HeroSection() {
   const t = await getTranslations('home')
 
   return (
-    <section className="relative bg-accent text-white py-24 lg:py-32">
+    <section className="relative bg-accent text-white py-16 sm:py-24 lg:py-32">
       <div className="absolute inset-0 bg-[url('/images/amsterdam-hero.jpg')] bg-cover bg-center opacity-10" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             {t('title')}
           </h1>
-          <p className="mt-6 text-xl text-gray-200 max-w-2xl">
+          <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-200 max-w-2xl">
             {t('subtitle')}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -36,7 +36,7 @@ async function HeroSection() {
             </Button>
           </div>
           {/* Trust Bar */}
-          <div className="mt-12 flex flex-wrap gap-8 text-sm text-gray-200">
+          <div className="mt-8 sm:mt-12 flex flex-wrap gap-4 sm:gap-8 text-xs sm:text-sm text-gray-200">
             <div className="flex items-center gap-2">
               <Users className="h-5 w-5" />
               <span>500+ {t('satisfiedClients')}</span>
@@ -61,16 +61,16 @@ async function HowItWorksSection() {
   const t = await getTranslations('home')
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">{t('howItWorks')}</h2>
-          <p className="mt-4 text-lg text-gray-600">{t('howItWorksSubtitle')}</p>
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('howItWorks')}</h2>
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">{t('howItWorksSubtitle')}</p>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {/* For Tenants */}
           <Card className="border-2 hover:border-accent transition-colors">
-            <CardContent className="p-8">
+            <CardContent className="p-5 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-primary-50 rounded-lg">
                   <Key className="h-6 w-6 text-accent" />
@@ -99,7 +99,7 @@ async function HowItWorksSection() {
 
           {/* For Landlords */}
           <Card className="border-2 hover:border-accent transition-colors">
-            <CardContent className="p-8">
+            <CardContent className="p-5 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-primary-50 rounded-lg">
                   <Home className="h-6 w-6 text-accent" />
@@ -136,12 +136,12 @@ async function WhyChooseUsSection() {
   const t = await getTranslations('home')
 
   return (
-    <section className="py-20">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900">{t('whyChooseUs')}</h2>
-            <p className="mt-6 text-lg text-gray-600">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('whyChooseUs')}</h2>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600">
               {t('whyChooseUsText')}
             </p>
             <ul className="mt-8 space-y-4">
@@ -174,12 +174,12 @@ async function WhyChooseUsSection() {
               <Link href="/about">{t('learnMoreAboutUs')}</Link>
             </Button>
           </div>
-          <div className="mt-12 lg:mt-0">
+          <div className="mt-8 lg:mt-0">
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-highlight to-highlight-dark flex items-center justify-center">
+              <div className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3] rounded-2xl bg-gradient-to-br from-highlight to-highlight-dark flex items-center justify-center">
                 <div className="text-center">
-                  <p className="text-6xl font-bold text-accent">10+</p>
-                  <p className="text-lg text-accent mt-2">{t('yearsExperience')}</p>
+                  <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-accent">10+</p>
+                  <p className="text-base sm:text-lg text-accent mt-2">{t('yearsExperience')}</p>
                 </div>
               </div>
             </div>
@@ -203,13 +203,13 @@ async function NeighborhoodsSection() {
   ]
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">{t('exploreNeighborhoods')}</h2>
-          <p className="mt-4 text-lg text-gray-600">{t('exploreNeighborhoodsSubtitle')}</p>
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('exploreNeighborhoods')}</h2>
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">{t('exploreNeighborhoodsSubtitle')}</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {neighborhoods.map((neighborhood) => (
             <Link key={neighborhood.slug} href={`/neighborhoods/${neighborhood.slug}`}>
               <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group overflow-hidden">
@@ -221,11 +221,11 @@ async function NeighborhoodsSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <CardContent className="p-5">
-                  <h3 className="font-semibold text-lg group-hover:text-accent transition-colors">
+                <CardContent className="p-3 sm:p-5">
+                  <h3 className="font-semibold text-sm sm:text-lg group-hover:text-accent transition-colors">
                     {neighborhood.name}
                   </h3>
-                  <p className="text-gray-600 text-sm mt-1">{neighborhood.description}</p>
+                  <p className="text-gray-600 text-xs sm:text-sm mt-1 line-clamp-2">{neighborhood.description}</p>
                 </CardContent>
               </Card>
             </Link>

@@ -60,7 +60,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Global">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 sm:h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
@@ -69,7 +69,7 @@ export function Header() {
                 alt="Meijer & Münninghoff Real Estate"
                 width={180}
                 height={50}
-                className="h-12 w-auto"
+                className="h-10 sm:h-12 w-auto"
                 priority
               />
             </Link>

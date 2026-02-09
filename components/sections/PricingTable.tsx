@@ -26,17 +26,17 @@ export function PricingTable({
   packages,
 }: PricingTableProps) {
   return (
-    <section className="py-20">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
-          {subtitle && <p className="mt-4 text-lg text-gray-600">{subtitle}</p>}
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{title}</h2>
+          {subtitle && <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">{subtitle}</p>}
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {packages.map((pkg, idx) => (
             <div
               key={idx}
-              className={`rounded-2xl p-8 border-2 ${
+              className={`rounded-2xl p-5 sm:p-8 border-2 ${
                 pkg.highlighted
                   ? 'border-accent bg-highlight/30 relative'
                   : 'border-gray-100 bg-white'
@@ -47,10 +47,10 @@ export function PricingTable({
                   Most Popular
                 </div>
               )}
-              <h3 className="text-xl font-semibold text-gray-900">{pkg.name}</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{pkg.name}</h3>
               <p className="mt-2 text-sm text-gray-600">{pkg.description}</p>
-              <div className="mt-6 mb-6">
-                <span className="text-3xl font-bold text-gray-900">{pkg.price}</span>
+              <div className="mt-4 sm:mt-6 mb-4 sm:mb-6">
+                <span className="text-2xl sm:text-3xl font-bold text-gray-900">{pkg.price}</span>
                 {pkg.priceNote && (
                   <span className="text-sm text-gray-500 ml-1">{pkg.priceNote}</span>
                 )}

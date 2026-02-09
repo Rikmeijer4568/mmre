@@ -88,10 +88,10 @@ export function GoogleReviews() {
   }, [])
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
             <svg className="h-8 w-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -101,7 +101,7 @@ export function GoogleReviews() {
             </svg>
             <span className="text-lg font-medium text-gray-600">Google Reviews</span>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900">What Our Clients Say</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">What Our Clients Say</h2>
           <div className="flex items-center justify-center gap-3 mt-4">
             <StarRating rating={Math.round(overallRating)} />
             <span className="text-lg font-semibold text-gray-900">{overallRating.toFixed(1)}</span>
@@ -110,12 +110,12 @@ export function GoogleReviews() {
         </div>
 
         {/* Reviews Grid */}
-        <div className={`grid md:grid-cols-3 gap-6 ${isLoading ? 'opacity-50' : ''}`}>
+        <div className={`grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 ${isLoading ? 'opacity-50' : ''}`}>
           {reviews.map((review, idx) => (
             <Card key={idx} className="h-full">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-semibold text-lg flex-shrink-0">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent text-white rounded-full flex items-center justify-center font-semibold text-base sm:text-lg flex-shrink-0">
                     {review.author_name.charAt(0)}
                   </div>
                   <div>

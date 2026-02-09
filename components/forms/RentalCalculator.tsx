@@ -139,8 +139,8 @@ export function RentalCalculator() {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handlePropertySubmit} className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+          <form onSubmit={handlePropertySubmit} className="space-y-3 sm:space-y-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Address
@@ -170,7 +170,7 @@ export function RentalCalculator() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Property Type
@@ -198,7 +198,7 @@ export function RentalCalculator() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Bedrooms
@@ -222,7 +222,7 @@ export function RentalCalculator() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Available From
@@ -359,9 +359,9 @@ export function RentalCalculator() {
         </CardTitle>
       </CardHeader>
       <CardContent className="p-6">
-        <div className="text-center mb-6">
+        <div className="text-center mb-4 sm:mb-6">
           <p className="text-sm text-gray-600 mb-2">Estimated Monthly Rent</p>
-          <p className="text-4xl font-bold text-gray-900">
+          <p className="text-2xl sm:text-4xl font-bold text-gray-900">
             €{estimate?.minRent.toLocaleString()} - €{estimate?.maxRent.toLocaleString()}
           </p>
         </div>

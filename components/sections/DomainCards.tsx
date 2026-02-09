@@ -16,18 +16,18 @@ interface DomainCardsProps {
 
 export function DomainCards({ title, subtitle, domains }: DomainCardsProps) {
   return (
-    <section className="py-20">
+    <section className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {title && (
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
-            {subtitle && <p className="mt-4 text-lg text-gray-600">{subtitle}</p>}
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{title}</h2>
+            {subtitle && <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600">{subtitle}</p>}
           </div>
         )}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {domains.map((domain, idx) => {
             const content = (
-              <div className="bg-white rounded-xl p-6 border border-gray-100 hover:border-accent/30 hover:shadow-lg transition-all group h-full">
+              <div className="bg-white rounded-xl p-4 sm:p-6 border border-gray-100 hover:border-accent/30 hover:shadow-lg transition-all group h-full">
                 <div className="w-12 h-12 bg-highlight rounded-lg flex items-center justify-center mb-4">
                   <domain.icon className="h-6 w-6 text-accent" />
                 </div>

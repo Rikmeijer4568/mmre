@@ -80,21 +80,21 @@ export default async function PricingPage() {
 
   return (
     <>
-      <section className="relative bg-accent text-white py-20 lg:py-28">
+      <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-4xl sm:text-5xl font-bold leading-tight">{t('title')}</h1>
-            <p className="mt-6 text-xl text-gray-200">{t('heroSubtitle')}</p>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">{t('title')}</h1>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-200">{t('heroSubtitle')}</p>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900">{t('introTitle')}</h2>
-            <p className="mt-6 text-lg text-gray-600 leading-relaxed">{t('introText1')}</p>
-            <p className="mt-4 text-lg text-gray-600 leading-relaxed">{t('introText2')}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('introTitle')}</h2>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 leading-relaxed">{t('introText1')}</p>
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">{t('introText2')}</p>
           </div>
         </div>
       </section>
@@ -105,12 +105,12 @@ export default async function PricingPage() {
         packages={packages}
       />
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900">{t('corporateTitle')}</h2>
-            <p className="mt-6 text-lg text-gray-600 leading-relaxed">{t('corporateText')}</p>
-            <div className="mt-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('corporateTitle')}</h2>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 leading-relaxed">{t('corporateText')}</p>
+            <div className="mt-6 sm:mt-8">
               <Button asChild>
                 <Link href="/services/corporate">
                   {t('corporateCta')}
@@ -122,11 +122,11 @@ export default async function PricingPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('faqTitle')}</h2>
-            <div className="space-y-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-12">{t('faqTitle')}</h2>
+            <div className="space-y-6 sm:space-y-8">
               {faqs.map((faq, idx) => (
                 <div key={idx}>
                   <h3 className="text-lg font-semibold text-gray-900">{faq.q}</h3>

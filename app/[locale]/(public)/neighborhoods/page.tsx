@@ -82,18 +82,18 @@ export default async function NeighborhoodsPage() {
   ]
 
   return (
-    <div className="py-16">
+    <div className="py-10 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900">{t('title')}</h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-10 sm:mb-16">
+          <h1 className="text-2xl sm:text-4xl font-bold text-gray-900">{t('title')}</h1>
+          <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
 
         {/* Neighborhoods Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {neighborhoods.map((neighborhood) => (
             <Link key={neighborhood.slug} href={`/neighborhoods/${neighborhood.slug}`}>
               <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
@@ -112,24 +112,24 @@ export default async function NeighborhoodsPage() {
                     </span>
                   </div>
                 </div>
-                <CardContent className="p-6">
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                <CardContent className="p-4 sm:p-6">
+                  <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">
                     {neighborhood.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
                     {neighborhood.highlights.slice(0, 3).map((highlight, idx) => (
                       <span
                         key={idx}
-                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
+                        className="bg-gray-100 text-gray-700 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded text-xs"
                       >
                         {highlight}
                       </span>
                     ))}
                   </div>
-                  <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+                  <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-100">
                     <div>
                       <p className="text-xs text-gray-500">{t('priceRange')}</p>
-                      <p className="font-semibold text-gray-900">{neighborhood.priceRange}</p>
+                      <p className="font-semibold text-gray-900 text-sm sm:text-base">{neighborhood.priceRange}</p>
                     </div>
                     <span className="text-accent group-hover:translate-x-1 transition-transform">
                       <ArrowRight className="h-5 w-5" />
