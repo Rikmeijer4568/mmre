@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, usePathname } from '@/i18n/navigation'
 import Image from 'next/image'
 import { X, ChevronDown, MessageCircle } from 'lucide-react'
@@ -67,10 +67,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const pathname = usePathname()
   const t = useTranslations('nav')
   const tCommon = useTranslations('common')
+  const previousPathname = useRef(pathname)
 
-  // Close on route change
+  // Close on route change (only when pathname actually changes)
   useEffect(() => {
-    onClose()
+    if (previousPathname.current !== pathname) {
+      previousPathname.current = pathname
+      onClose()
+    }
   }, [pathname, onClose])
 
   // Prevent body scroll when open
