@@ -2,7 +2,11 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazy initialize Resend only when needed
+const getResend = () => {
+  if (!process.env.RESEND_API_KEY) return null
+  return new Resend(process.env.RESEND_API_KEY)
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -65,7 +69,8 @@ export async function POST(request: NextRequest) {
     })
 
     // Send email notification
-    if (process.env.RESEND_API_KEY && process.env.NOTIFICATION_EMAIL) {
+    const resend = getResend()
+    if (resend && process.env.NOTIFICATION_EMAIL) {
       try {
         await resend.emails.send({
           from: 'MMRE <notifications@mmre.nl>',

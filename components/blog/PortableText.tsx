@@ -72,7 +72,8 @@ const components = {
     ),
   },
   marks: {
-    link: ({ children, value }: { children: React.ReactNode; value: LinkValue }) => {
+    link: ({ children, value }: { children: React.ReactNode; value?: LinkValue }) => {
+      if (!value) return <>{children}</>
       const target = value.blank ? '_blank' : undefined
       const rel = value.blank ? 'noopener noreferrer' : undefined
       return (
