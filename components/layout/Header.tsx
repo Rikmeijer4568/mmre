@@ -1,13 +1,13 @@
 'use client'
 
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef, useEffect } from 'react'
 import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
 import { Menu, ChevronDown, MessageCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { getWhatsAppLink } from '@/lib/whatsapp'
-import { huurNav, rentOutNav, learnNav, directNav } from '@/lib/navigation'
+import { huurNav, rentOutNav, learnNav } from '@/lib/navigation'
 import { MegaMenu } from './MegaMenu'
 import { MobileMenu } from './MobileMenu'
 import { LanguageSwitcher } from './LanguageSwitcher'
@@ -19,8 +19,18 @@ export function Header() {
   const tCommon = useTranslations('common')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activePanel, setActivePanel] = useState<MenuPanel>(null)
+  const [scrolled, setScrolled] = useState(false)
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const leaveTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Track scroll position for header styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const closePanel = useCallback(() => {
     setActivePanel(null)
@@ -58,12 +68,21 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        scrolled
+          ? 'bg-white/95 backdrop-blur-md shadow-soft border-b border-gray-100/50'
+          : 'bg-white border-b border-gray-100'
+      }`}
+    >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Global">
         <div className="flex h-16 sm:h-20 items-center justify-between">
           {/* Logo */}
           <div className="flex lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5">
+            <Link
+              href="/"
+              className="-m-1.5 p-1.5 transition-opacity duration-200 hover:opacity-80"
+            >
               <Image
                 src="/images/Logo/Meijer Münninghoff Real Estate.svg"
                 alt="Meijer & Münninghoff Real Estate"
@@ -79,7 +98,8 @@ export function Header() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-xl p-2.5 text-gray-700
+                         transition-all duration-200 hover:bg-gray-100 active:scale-95"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -88,7 +108,7 @@ export function Header() {
           </div>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-x-6">
+          <div className="hidden lg:flex lg:items-center lg:gap-x-1">
             {/* Rent In dropdown trigger */}
             <div
               onMouseEnter={() => handleMouseEnter('rentIn')}
@@ -96,14 +116,17 @@ export function Header() {
             >
               <button
                 type="button"
-                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                  activePanel === 'rentIn' ? 'text-accent' : 'text-gray-700 hover:text-accent-light'
+                className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium
+                           transition-all duration-200 ${
+                  activePanel === 'rentIn'
+                    ? 'text-accent bg-primary-50'
+                    : 'text-gray-700 hover:text-accent hover:bg-gray-50'
                 }`}
                 onClick={() => handleTriggerClick('rentIn')}
               >
                 {t('rentIn')}
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform ${
+                  className={`h-4 w-4 transition-transform duration-200 ${
                     activePanel === 'rentIn' ? 'rotate-180' : ''
                   }`}
                 />
@@ -117,14 +140,17 @@ export function Header() {
             >
               <button
                 type="button"
-                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                  activePanel === 'rentOut' ? 'text-accent' : 'text-gray-700 hover:text-accent-light'
+                className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium
+                           transition-all duration-200 ${
+                  activePanel === 'rentOut'
+                    ? 'text-accent bg-primary-50'
+                    : 'text-gray-700 hover:text-accent hover:bg-gray-50'
                 }`}
                 onClick={() => handleTriggerClick('rentOut')}
               >
                 {t('rentOut')}
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform ${
+                  className={`h-4 w-4 transition-transform duration-200 ${
                     activePanel === 'rentOut' ? 'rotate-180' : ''
                   }`}
                 />
@@ -138,14 +164,17 @@ export function Header() {
             >
               <button
                 type="button"
-                className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                  activePanel === 'learn' ? 'text-accent' : 'text-gray-700 hover:text-accent-light'
+                className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium
+                           transition-all duration-200 ${
+                  activePanel === 'learn'
+                    ? 'text-accent bg-primary-50'
+                    : 'text-gray-700 hover:text-accent hover:bg-gray-50'
                 }`}
                 onClick={() => handleTriggerClick('learn')}
               >
                 {t('learn')}
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform ${
+                  className={`h-4 w-4 transition-transform duration-200 ${
                     activePanel === 'learn' ? 'rotate-180' : ''
                   }`}
                 />
@@ -155,19 +184,22 @@ export function Header() {
             {/* Direct links */}
             <Link
               href="/neighborhoods"
-              className="text-sm font-medium text-gray-700 hover:text-accent-light transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700
+                        hover:text-accent hover:bg-gray-50 transition-all duration-200"
             >
               {t('neighborhoods')}
             </Link>
             <Link
               href="/about"
-              className="text-sm font-medium text-gray-700 hover:text-accent-light transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700
+                        hover:text-accent hover:bg-gray-50 transition-all duration-200"
             >
               {t('about')}
             </Link>
             <Link
               href="/contact"
-              className="text-sm font-medium text-gray-700 hover:text-accent-light transition-colors"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700
+                        hover:text-accent hover:bg-gray-50 transition-all duration-200"
             >
               {t('contact')}
             </Link>
