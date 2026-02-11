@@ -13,9 +13,14 @@ type Props = {
 }
 
 async function getProperty(slug: string) {
-  return prisma.property.findUnique({
-    where: { slug },
-  })
+  try {
+    return await prisma.property.findUnique({
+      where: { slug },
+    })
+  } catch (error) {
+    console.error('Error fetching property:', error)
+    return null
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

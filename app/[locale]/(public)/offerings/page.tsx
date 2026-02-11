@@ -19,30 +19,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 async function getProperties() {
-  return prisma.property.findMany({
-    where: {
-      publishedAt: { not: null },
-    },
-    orderBy: [
-      { featured: 'desc' },
-      { publishedAt: 'desc' },
-    ],
-    select: {
-      id: true,
-      title: true,
-      slug: true,
-      address: true,
-      city: true,
-      neighborhood: true,
-      price: true,
-      bedrooms: true,
-      bathrooms: true,
-      area: true,
-      images: true,
-      available: true,
-      featured: true,
-    },
-  })
+  try {
+    return await prisma.property.findMany({
+      where: {
+        publishedAt: { not: null },
+      },
+      orderBy: [
+        { featured: 'desc' },
+        { publishedAt: 'desc' },
+      ],
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        address: true,
+        city: true,
+        neighborhood: true,
+        price: true,
+        bedrooms: true,
+        bathrooms: true,
+        area: true,
+        images: true,
+        available: true,
+        featured: true,
+      },
+    })
+  } catch (error) {
+    console.error('Error fetching properties:', error)
+    return []
+  }
 }
 
 export default async function OfferingsPage({ params }: Props) {
