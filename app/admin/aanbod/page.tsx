@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { ImageUploader } from '@/components/admin/ImageUploader'
 import {
   ArrowLeft,
   Plus,
@@ -60,7 +61,7 @@ interface PropertyForm {
   area: string
   description: string
   features: string
-  images: string
+  images: string[]
   available: boolean
   featured: boolean
   published: boolean
@@ -78,7 +79,7 @@ const emptyForm: PropertyForm = {
   area: '',
   description: '',
   features: '',
-  images: '',
+  images: [],
   available: true,
   featured: false,
   published: false,
@@ -122,7 +123,7 @@ export default function AanbodAdminPage() {
     area: property.area.toString(),
     description: property.description,
     features: property.features.join('\n'),
-    images: property.images.join('\n'),
+    images: property.images,
     available: property.available,
     featured: property.featured,
     published: property.publishedAt !== null,
@@ -184,7 +185,7 @@ export default function AanbodAdminPage() {
         area: form.area || '0',
         description: form.description,
         features: form.features.split('\n').filter(f => f.trim()),
-        images: form.images.split('\n').filter(i => i.trim()),
+        images: form.images,
         available: form.available,
         featured: form.featured,
         published: form.published,
@@ -443,17 +444,18 @@ export default function AanbodAdminPage() {
                     placeholder="Balcony&#10;Parking&#10;Garden&#10;Recently renovated"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Image URLs (one per line)
-                  </label>
-                  <Textarea
-                    value={form.images}
-                    onChange={(e) => setForm({ ...form, images: e.target.value })}
-                    rows={4}
-                    placeholder="https://example.com/image1.jpg&#10;https://example.com/image2.jpg"
-                  />
-                </div>
+              </div>
+
+              {/* Image Upload */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Property Images
+                </label>
+                <ImageUploader
+                  images={form.images}
+                  onChange={(images) => setForm({ ...form, images })}
+                  maxImages={10}
+                />
               </div>
 
               <div className="flex flex-wrap gap-6">
