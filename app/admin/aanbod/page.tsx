@@ -197,19 +197,28 @@ export default function AanbodAdminPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         })
-        if (!res.ok) throw new Error('Failed to create property')
+        if (!res.ok) {
+          const errorData = await res.json().catch(() => ({}))
+          const errorMsg = errorData.details || errorData.error || 'Failed to create property'
+          throw new Error(errorMsg)
+        }
       } else if (editingId) {
         const res = await fetch(`/api/properties/${editingId}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         })
-        if (!res.ok) throw new Error('Failed to update property')
+        if (!res.ok) {
+          const errorData = await res.json().catch(() => ({}))
+          const errorMsg = errorData.details || errorData.error || 'Failed to update property'
+          throw new Error(errorMsg)
+        }
       }
 
       await fetchProperties()
       cancelEdit()
     } catch (err) {
+      console.error('Save error:', err)
       setError(err instanceof Error ? err.message : 'Failed to save property')
     } finally {
       setSaving(false)
