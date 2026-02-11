@@ -52,19 +52,19 @@ export default async function RentalCompliancePage() {
       icon: Ruler,
       title: t('nen2580Title'),
       description: t('nen2580Desc'),
-      href: '/rent-out/services/nen-2580',
+      href: '/rent-out/services/nen-2580' as const,
     },
     {
       icon: Zap,
       title: t('energyLabelTitle'),
       description: t('energyLabelDesc'),
-      href: '/rent-out/services/energy-label',
+      href: '/rent-out/services/energy-label' as const,
     },
     {
       icon: Calculator,
       title: t('wwsTitle'),
       description: t('wwsDesc'),
-      href: '/rent-out/services/wws-point-calculation',
+      href: '/rent-out/services/wws-point-calculation' as const,
     },
   ]
 

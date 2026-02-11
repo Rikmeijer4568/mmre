@@ -1,22 +1,31 @@
 'use client'
 
-import { usePathname } from '@/i18n/navigation'
+import { usePathname, useRouter } from '@/i18n/navigation'
 import { useLocale } from 'next-intl'
-import { Link } from '@/i18n/navigation'
 import { locales, type Locale } from '@/i18n/config'
+import { useParams } from 'next/navigation'
 
 export function LanguageSwitcher() {
   const pathname = usePathname()
+  const router = useRouter()
+  const params = useParams()
   const currentLocale = useLocale() as Locale
+
+  const handleLocaleChange = (locale: Locale) => {
+    router.replace(
+      // @ts-expect-error -- TypeScript doesn't have access to the dynamic segment value at compile time
+      { pathname, params },
+      { locale }
+    )
+  }
 
   return (
     <div className="flex items-center gap-1 text-sm">
       {locales.map((locale, index) => (
         <span key={locale} className="flex items-center">
           {index > 0 && <span className="text-stone-400 mx-1">|</span>}
-          <Link
-            href={pathname}
-            locale={locale}
+          <button
+            onClick={() => handleLocaleChange(locale)}
             className={`uppercase transition-colors ${
               locale === currentLocale
                 ? 'text-accent font-semibold'
@@ -24,7 +33,7 @@ export function LanguageSwitcher() {
             }`}
           >
             {locale}
-          </Link>
+          </button>
         </span>
       ))}
     </div>

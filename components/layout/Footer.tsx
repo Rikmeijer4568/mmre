@@ -1,6 +1,7 @@
 'use client'
 
 import { Link } from '@/i18n/navigation'
+import NextLink from 'next/link'
 import Image from 'next/image'
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
 import { NewsletterForm } from '@/components/forms/NewsletterForm'
@@ -75,13 +76,13 @@ export function Footer() {
               <ul className="space-y-3.5">
                 {group.items.map((link) => (
                   <li key={link.name}>
-                    <Link
+                    <NextLink
                       href={link.href}
                       className="text-gray-400 hover:text-white text-sm transition-all duration-200
                                hover:translate-x-1 inline-block"
                     >
                       {link.name}
-                    </Link>
+                    </NextLink>
                   </li>
                 ))}
               </ul>

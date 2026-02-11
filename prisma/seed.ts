@@ -144,6 +144,52 @@ async function main() {
   }
   console.log('Created settings:', settings.length)
 
+  // Create example property
+  const exampleProperty = await prisma.property.upsert({
+    where: { slug: 'charming-apartment-jordaan' },
+    update: {},
+    create: {
+      title: 'Charming Apartment in Jordaan',
+      slug: 'charming-apartment-jordaan',
+      address: 'Prinsengracht 123',
+      city: 'Amsterdam',
+      neighborhood: 'Jordaan',
+      price: 2500,
+      bedrooms: 2,
+      bathrooms: 1,
+      area: 85,
+      description: `Welcome to this beautifully renovated apartment in the heart of the historic Jordaan neighborhood. This charming 2-bedroom apartment offers the perfect blend of classic Amsterdam architecture and modern comfort.
+
+The apartment features high ceilings with original beams, large windows overlooking the iconic Prinsengracht canal, and a bright, open-plan living area. The modern kitchen is fully equipped with high-end appliances, and the bathroom has been recently renovated with premium fixtures.
+
+Located on one of Amsterdam's most picturesque canals, you'll be surrounded by boutique shops, cozy cafes, and excellent restaurants. The Anne Frank House and Westerkerk are just a short walk away, and the city center is easily accessible by foot or bike.
+
+This property is ideal for professionals or couples looking for an authentic Amsterdam living experience in one of the city's most sought-after neighborhoods.`,
+      features: [
+        'Canal view',
+        'High ceilings with original beams',
+        'Fully renovated in 2023',
+        'Modern open kitchen',
+        'Washing machine in unit',
+        'Central heating',
+        'Double glazing',
+        'Storage in basement',
+        'Close to public transport',
+        'Unfurnished (negotiable)',
+      ],
+      images: [
+        '/images/properties/jordaan-apartment-1.jpg',
+        '/images/properties/jordaan-apartment-2.jpg',
+        '/images/properties/jordaan-apartment-3.jpg',
+        '/images/properties/jordaan-apartment-4.jpg',
+      ],
+      available: true,
+      featured: true,
+      publishedAt: new Date(),
+    },
+  })
+  console.log('Created example property:', exampleProperty.title)
+
   console.log('Database seeding completed!')
 }
 

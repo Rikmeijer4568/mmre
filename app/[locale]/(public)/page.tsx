@@ -279,7 +279,7 @@ async function NeighborhoodsSection() {
         <AnimatedContainer variants={staggerContainer} className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {neighborhoods.map((neighborhood) => (
             <AnimatedItem key={neighborhood.slug}>
-              <Link href={`/neighborhoods/${neighborhood.slug}`}>
+              <Link href={{ pathname: '/neighborhoods/[slug]', params: { slug: neighborhood.slug } }}>
                 <Card variant="interactive" className="h-full overflow-hidden group">
                   <div className="aspect-[4/3] relative overflow-hidden">
                     <Image

@@ -55,11 +55,11 @@ export default async function RentOutPage() {
   ]
 
   const complianceServices = [
-    { icon: Calculator, title: tNav('wwsPointCalculation'), description: t('complianceWWSDesc'), href: '/rent-out/services/wws-point-calculation' },
-    { icon: Zap, title: tNav('energyLabel'), description: t('complianceEnergyDesc'), href: '/rent-out/services/energy-label' },
-    { icon: Ruler, title: tNav('nen2580'), description: t('complianceNENDesc'), href: '/rent-out/services/nen-2580' },
-    { icon: ShieldCheck, title: tNav('rentalCompliance'), description: t('compliancePackageDesc'), href: '/rent-out/services/rental-compliance', highlighted: true },
-    { icon: Leaf, title: tNav('sustainability'), description: t('complianceSustainabilityDesc'), href: '/rent-out/services/sustainability' },
+    { icon: Calculator, title: tNav('wwsPointCalculation'), description: t('complianceWWSDesc'), href: '/rent-out/services/wws-point-calculation' as const },
+    { icon: Zap, title: tNav('energyLabel'), description: t('complianceEnergyDesc'), href: '/rent-out/services/energy-label' as const },
+    { icon: Ruler, title: tNav('nen2580'), description: t('complianceNENDesc'), href: '/rent-out/services/nen-2580' as const },
+    { icon: ShieldCheck, title: tNav('rentalCompliance'), description: t('compliancePackageDesc'), href: '/rent-out/services/rental-compliance' as const, highlighted: true },
+    { icon: Leaf, title: tNav('sustainability'), description: t('complianceSustainabilityDesc'), href: '/rent-out/services/sustainability' as const },
   ]
 
   const stats = [

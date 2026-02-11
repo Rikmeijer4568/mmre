@@ -244,6 +244,46 @@ model Download {
   updatedAt   DateTime @updatedAt
 }
 
+// ==================== PROPERTIES (AANBOD) ====================
+
+model Property {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  address     String
+  city        String   @default("Amsterdam")
+  neighborhood String?
+
+  // Pricing
+  price       Int      // Monthly rent in euros
+
+  // Features
+  bedrooms    Int
+  bathrooms   Int
+  area        Int      // Square meters
+
+  // Details
+  description String   @db.Text
+  features    String[] // Array of feature strings
+
+  // Images
+  images      String[] // Array of image URLs
+
+  // Status
+  available   Boolean  @default(true)
+  featured    Boolean  @default(false)
+
+  // Timestamps
+  publishedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([available])
+  @@index([featured])
+  @@index([city])
+  @@index([publishedAt])
+}
+
 // ==================== SETTINGS ====================
 
 model Settings {

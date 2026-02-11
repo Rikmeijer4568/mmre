@@ -95,7 +95,7 @@ export default async function NeighborhoodsPage() {
         {/* Neighborhoods Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {neighborhoods.map((neighborhood) => (
-            <Link key={neighborhood.slug} href={`/neighborhoods/${neighborhood.slug}`}>
+            <Link key={neighborhood.slug} href={{ pathname: '/neighborhoods/[slug]', params: { slug: neighborhood.slug } }}>
               <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
                 <div className="aspect-[16/10] relative overflow-hidden rounded-t-xl">
                   <Image

@@ -16,11 +16,13 @@ import {
   MessageSquare,
   HelpCircle,
   BarChart3,
+  Home,
 } from 'lucide-react'
 
 const navigation = [
   { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { name: 'Leads', href: '/admin/leads', icon: Users },
+  { name: 'Aanbod', href: '/admin/aanbod', icon: Home },
   { name: 'Analytics', href: '/admin/analytics', icon: BarChart3 },
   { name: 'Content', href: '/admin/content', icon: FileText },
   { name: 'Neighborhoods', href: '/admin/content/neighborhoods', icon: MapPin },

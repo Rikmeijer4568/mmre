@@ -183,6 +183,13 @@ export function Header() {
 
             {/* Direct links */}
             <Link
+              href="/offerings"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700
+                        hover:text-accent hover:bg-gray-50 transition-all duration-200"
+            >
+              {t('offerings')}
+            </Link>
+            <Link
               href="/neighborhoods"
               className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700
                         hover:text-accent hover:bg-gray-50 transition-all duration-200"

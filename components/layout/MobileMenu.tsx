@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import NextLink from 'next/link'
 import { Link, usePathname } from '@/i18n/navigation'
 import Image from 'next/image'
 import { X, ChevronDown, MessageCircle } from 'lucide-react'
@@ -47,7 +48,7 @@ function Accordion({
       >
         <div className="space-y-1 pl-2">
           {items.map((item) => (
-            <Link
+            <NextLink
               key={item.href}
               href={item.href}
               className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
@@ -55,7 +56,7 @@ function Accordion({
             >
               {item.icon && <item.icon className="h-4 w-4 text-accent flex-shrink-0" />}
               <span>{item.name}</span>
-            </Link>
+            </NextLink>
           ))}
         </div>
       </div>
@@ -128,6 +129,13 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
             {/* Direct links */}
             <div className="pt-3 space-y-1">
+              <Link
+                href="/offerings"
+                className="block rounded-lg px-3 py-2.5 text-base font-medium text-gray-900 hover:bg-gray-50"
+                onClick={onClose}
+              >
+                {t('offerings')}
+              </Link>
               <Link
                 href="/neighborhoods"
                 className="block rounded-lg px-3 py-2.5 text-base font-medium text-gray-900 hover:bg-gray-50"

@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useRef, useCallback } from 'react'
-import { Link, usePathname } from '@/i18n/navigation'
+import { useEffect, useRef } from 'react'
+import NextLink from 'next/link'
+import { usePathname } from '@/i18n/navigation'
 import { type NavItem } from '@/lib/navigation'
 
 interface MegaMenuProps {
@@ -41,7 +42,7 @@ export function MegaMenu({ items, isOpen, onClose }: MegaMenuProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-2 gap-6">
           {items.map((item) => (
-            <Link
+            <NextLink
               key={item.href}
               href={item.href}
               className="flex items-start gap-4 rounded-lg p-3 -m-3 hover:bg-gray-50 transition-colors group"
@@ -60,7 +61,7 @@ export function MegaMenu({ items, isOpen, onClose }: MegaMenuProps) {
                   <p className="mt-0.5 text-sm text-gray-500">{item.description}</p>
                 )}
               </div>
-            </Link>
+            </NextLink>
           ))}
         </div>
       </div>

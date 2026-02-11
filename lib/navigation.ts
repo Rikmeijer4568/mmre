@@ -173,6 +173,7 @@ export const rentOutNav: NavItem[] = [
 
 // Direct navigation links (not inside dropdowns)
 export const directNav: NavItem[] = [
+  { name: 'Offerings', href: '/offerings' },
   { name: 'Neighborhoods', href: '/neighborhoods' },
   { name: 'About Us', href: '/about' },
   { name: 'Contact', href: '/contact' },
