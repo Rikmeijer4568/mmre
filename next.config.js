@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.sanity.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'utfs.io',
+      },
     ],
   },
   async redirects() {

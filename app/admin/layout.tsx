@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import { SessionProvider } from '@/components/providers/SessionProvider'
 import { AdminLayoutClient } from './layout-client'
 import '../globals.css'
 
@@ -16,7 +17,9 @@ export default function AdminLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <AdminLayoutClient>{children}</AdminLayoutClient>
+        <SessionProvider>
+          <AdminLayoutClient>{children}</AdminLayoutClient>
+        </SessionProvider>
       </body>
     </html>
   )

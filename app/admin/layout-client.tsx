@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
+import { useSession, signOut } from 'next-auth/react'
 import { cn } from '@/lib/utils'
 import {
   LayoutDashboard,
@@ -17,6 +18,7 @@ import {
   HelpCircle,
   BarChart3,
   Home,
+  Loader2,
 } from 'lucide-react'
 
 const navigation = [
@@ -38,6 +40,32 @@ export function AdminLayoutClient({
 }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
+  const { data: session, status } = useSession()
+
+  // Show loading state while checking auth
+  if (status === 'loading') {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <Loader2 className="h-8 w-8 animate-spin text-accent" />
+      </div>
+    )
+  }
+
+  // Redirect to login if not authenticated (except on login page)
+  if (status === 'unauthenticated' && pathname !== '/admin/login') {
+    router.push('/admin/login')
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <Loader2 className="h-8 w-8 animate-spin text-accent" />
+      </div>
+    )
+  }
+
+  // Show login page without sidebar
+  if (pathname === '/admin/login') {
+    return <>{children}</>
+  }
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -99,14 +127,21 @@ export function AdminLayoutClient({
               </Link>
             ))}
           </nav>
-          <div className="p-4 border-t">
+          <div className="p-4 border-t space-y-1">
             <Link
               href="/"
               className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100"
             >
-              <LogOut className="h-5 w-5" />
+              <Home className="h-5 w-5" />
               Back to Site
             </Link>
+            <button
+              onClick={() => signOut({ callbackUrl: '/admin/login' })}
+              className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-red-600 hover:bg-red-50"
+            >
+              <LogOut className="h-5 w-5" />
+              Logout
+            </button>
           </div>
         </div>
       </div>
