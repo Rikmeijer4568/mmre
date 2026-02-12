@@ -1,151 +1,267 @@
 import { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
-import { ArrowRight } from 'lucide-react'
+import { Check, ArrowRight, Star, Home, Search, MessageSquare, Eye, FileText, Key, Wrench, Shield } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { PricingTable } from '@/components/sections/PricingTable'
-import { ServiceCTA } from '@/components/sections/ServiceCTA'
 import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-  title: 'Pricing - Home Finding & Relocation Packages | MMRE',
-  description:
-    'Transparent pricing for MMRE home finding and relocation services. Choose from Home Finding, Relocation Essentials, or Full Relocation packages.',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('pricing')
+  return {
+    title: t('metaTitle'),
+    description: t('metaDescription'),
+  }
 }
 
 export default async function PricingPage() {
   const t = await getTranslations('pricing')
-  const tCommon = await getTranslations('common')
 
-  const packages = [
+  const verhuurPackages = [
     {
-      name: t('packages.homeFinding.name'),
-      price: '€1,895',
-      priceNote: t('oneTimeFee'),
-      description: t('packages.homeFinding.description'),
+      name: t('verhuur.package1.name'),
+      price: '€499,-',
+      priceNote: t('verhuur.priceNote'),
       features: [
-        t('packages.homeFinding.feature1'),
-        t('packages.homeFinding.feature2'),
-        t('packages.homeFinding.feature3'),
-        t('packages.homeFinding.feature4'),
-        t('packages.homeFinding.feature5'),
-        t('packages.homeFinding.feature6'),
-        t('packages.homeFinding.feature7'),
+        t('verhuur.package1.feature1'),
+        t('verhuur.package1.feature2'),
+        t('verhuur.package1.feature3'),
+        t('verhuur.package1.feature4'),
+        t('verhuur.package1.feature5'),
+        t('verhuur.package1.feature6'),
+        t('verhuur.package1.feature7'),
       ],
-      whatsappTemplate: 'homeFinding' as const,
-      ctaLabel: t('packages.homeFinding.cta'),
     },
     {
-      name: t('packages.relocationEssentials.name'),
-      price: '€2,895',
-      priceNote: t('oneTimeFee'),
-      description: t('packages.relocationEssentials.description'),
-      highlighted: true,
+      name: t('verhuur.package2.name'),
+      price: '€849,-',
+      priceNote: t('verhuur.priceNote'),
+      popular: true,
       features: [
-        t('packages.relocationEssentials.feature1'),
-        t('packages.relocationEssentials.feature2'),
-        t('packages.relocationEssentials.feature3'),
-        t('packages.relocationEssentials.feature4'),
-        t('packages.relocationEssentials.feature5'),
-        t('packages.relocationEssentials.feature6'),
-        t('packages.relocationEssentials.feature7'),
+        t('verhuur.package2.feature1'),
+        t('verhuur.package2.feature2'),
+        t('verhuur.package2.feature3'),
+        t('verhuur.package2.feature4'),
       ],
-      whatsappTemplate: 'relocation' as const,
-      ctaLabel: tCommon('getStarted'),
     },
     {
-      name: t('packages.fullRelocation.name'),
-      price: '€4,495',
-      priceNote: t('oneTimeFee'),
-      description: t('packages.fullRelocation.description'),
+      name: t('verhuur.package3.name'),
+      price: '€1.249,-',
+      priceNote: t('verhuur.priceNote'),
       features: [
-        t('packages.fullRelocation.feature1'),
-        t('packages.fullRelocation.feature2'),
-        t('packages.fullRelocation.feature3'),
-        t('packages.fullRelocation.feature4'),
-        t('packages.fullRelocation.feature5'),
-        t('packages.fullRelocation.feature6'),
-        t('packages.fullRelocation.feature7'),
+        t('verhuur.package3.feature1'),
+        t('verhuur.package3.feature2'),
+        t('verhuur.package3.feature3'),
       ],
-      whatsappTemplate: 'relocation' as const,
-      ctaLabel: t('packages.fullRelocation.cta'),
+      note: t('verhuur.package3.note'),
     },
   ]
 
-  const faqs = [
-    { q: t('faq.q1'), a: t('faq.a1') },
-    { q: t('faq.q2'), a: t('faq.a2') },
-    { q: t('faq.q3'), a: t('faq.a3') },
-    { q: t('faq.q4'), a: t('faq.a4') },
+  const aanhuurServices = [
+    { icon: Search, text: t('aanhuur.service1') },
+    { icon: Home, text: t('aanhuur.service2') },
+    { icon: MessageSquare, text: t('aanhuur.service3') },
+    { icon: MessageSquare, text: t('aanhuur.service4') },
+    { icon: Eye, text: t('aanhuur.service5') },
+    { icon: FileText, text: t('aanhuur.service6') },
+    { icon: Key, text: t('aanhuur.service7') },
+    { icon: Wrench, text: t('aanhuur.service8') },
+    { icon: Shield, text: t('aanhuur.service9') },
   ]
 
   return (
     <>
-      <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-28">
+      {/* Hero Section */}
+      <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">{t('title')}</h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-200">{t('heroSubtitle')}</p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+              {t('title')}
+            </h1>
+            <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-200">
+              {t('subtitle')}
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 lg:py-20">
+      {/* Verhuur Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('introTitle')}</h2>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 leading-relaxed">{t('introText1')}</p>
-            <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">{t('introText2')}</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+              {t('verhuur.title')}
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              {t('verhuur.subtitle')}
+            </p>
+          </div>
+
+          {/* Pricing Cards */}
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+            {verhuurPackages.map((pkg, index) => (
+              <div
+                key={index}
+                className={`relative bg-white rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
+                  pkg.popular
+                    ? 'border-accent shadow-lg scale-105'
+                    : 'border-gray-200 hover:border-accent/50'
+                }`}
+              >
+                {pkg.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex items-center gap-1 bg-accent text-white text-sm font-semibold px-4 py-1.5 rounded-full">
+                      <Star className="h-4 w-4 fill-current" />
+                      {t('popular')}
+                    </span>
+                  </div>
+                )}
+
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {pkg.name}
+                  </h3>
+                  <div className="text-4xl font-bold text-accent">
+                    {pkg.price}
+                  </div>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {pkg.priceNote}
+                  </p>
+                </div>
+
+                <ul className="space-y-3 mb-8">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {pkg.note && (
+                  <p className="text-sm text-amber-600 bg-amber-50 rounded-lg p-3 mb-6">
+                    {pkg.note}
+                  </p>
+                )}
+
+                <Button asChild className="w-full" variant={pkg.popular ? 'default' : 'outline'}>
+                  <Link href="/contact">
+                    {t('cta')}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            ))}
+          </div>
+
+          {/* Starttarief Notice */}
+          <div className="mt-12 text-center">
+            <div className="inline-block bg-gray-100 rounded-xl px-6 py-4">
+              <p className="text-gray-700">
+                <span className="font-semibold">{t('verhuur.startFee.label')}</span>{' '}
+                {t('verhuur.startFee.text')}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <PricingTable
-        title={t('choosePackage')}
-        subtitle={t('packagesSubtitle')}
-        packages={packages}
-      />
-
-      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+      {/* Aanhuur Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t('corporateTitle')}</h2>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 leading-relaxed">{t('corporateText')}</p>
-            <div className="mt-6 sm:mt-8">
-              <Button asChild>
-                <Link href="/services/corporate">
-                  {t('corporateCta')}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+              {t('aanhuur.title')}
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              {t('aanhuur.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Price Card */}
+            <div className="bg-white rounded-2xl border-2 border-accent shadow-lg p-8 lg:p-10">
+              <div className="text-center mb-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  {t('aanhuur.priceTitle')}
+                </h3>
+                <div className="text-4xl sm:text-5xl font-bold text-accent mb-2">
+                  {t('aanhuur.price')}
+                </div>
+                <p className="text-gray-600">
+                  {t('aanhuur.priceMinimum')}
+                </p>
+              </div>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                  <span className="text-gray-600">{t('aanhuur.condition')}</span>
+                  <span className="font-semibold text-accent">{t('aanhuur.noCureNoPay')}</span>
+                </div>
+                <div className="flex items-center justify-between py-3 border-b border-gray-100">
+                  <span className="text-gray-600">{t('aanhuur.startFeeLabel')}</span>
+                  <span className="font-semibold">{t('aanhuur.startFeeAmount')}</span>
+                </div>
+                <p className="text-sm text-gray-500 text-center">
+                  {t('aanhuur.startFeeNote')}
+                </p>
+              </div>
+
+              <Button asChild className="w-full" size="lg">
+                <Link href="/contact">
+                  {t('cta')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8 sm:mb-12">{t('faqTitle')}</h2>
-            <div className="space-y-6 sm:space-y-8">
-              {faqs.map((faq, idx) => (
-                <div key={idx}>
-                  <h3 className="text-lg font-semibold text-gray-900">{faq.q}</h3>
-                  <p className="mt-2 text-gray-600">{faq.a}</p>
-                </div>
-              ))}
+            {/* Services List */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                {t('aanhuur.servicesTitle')}
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {aanhuurServices.map((service, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 bg-white rounded-xl p-4 border border-gray-100"
+                  >
+                    <div className="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                      <service.icon className="h-5 w-5 text-accent" />
+                    </div>
+                    <span className="text-gray-700 pt-2">{service.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Slogan */}
+              <div className="mt-8 p-6 bg-accent/5 rounded-xl border border-accent/20">
+                <p className="text-lg font-medium text-gray-900 text-center">
+                  {t('aanhuur.slogan')}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <ServiceCTA
-        title={t('ctaTitle')}
-        description={t('ctaDescription')}
-        whatsappTemplate="general"
-        whatsappLabel={t('ctaWhatsapp')}
-        primaryLabel={t('ctaPrimary')}
-        primaryHref="/how-we-work"
-      />
+      {/* CTA Section */}
+      <section className="py-16 sm:py-20 bg-accent text-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+            {t('ctaTitle')}
+          </h2>
+          <p className="text-lg text-gray-200 mb-8">
+            {t('ctaDescription')}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/contact">
+                {t('ctaContact')}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

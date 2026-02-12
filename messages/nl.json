@@ -711,69 +711,71 @@
     }
   },
   "pricing": {
-    "title": "Transparante tarieven",
-    "heroSubtitle": "Duidelijke pakketten en tarieven voor woningzoeken en relocatie diensten. Geen verborgen kosten.",
-    "introTitle": "Investeren in een zorgeloze verhuizing",
-    "introText1": "Verhuizen naar een nieuw land is al overweldigend genoeg. Onze diensten nemen de stress weg door alles te regelen zodat u zich kunt richten op uw nieuwe leven.",
-    "introText2": "Alle pakketten bevatten persoonlijke begeleiding door uw eigen dedicated consultant die u gedurende het hele proces ondersteunt.",
-    "choosePackage": "Kies uw pakket",
-    "packagesSubtitle": "Selecteer het serviceniveau dat past bij uw behoeften",
-    "oneTimeFee": "Eenmalig",
-    "packages": {
-      "homeFinding": {
-        "name": "Woningzoeken",
-        "description": "Professionele woningzoekdienst met persoonlijke begeleiding van intake tot sleuteloverdracht.",
-        "feature1": "Uitgebreide intake en woningprofiel",
-        "feature2": "Actief zoeken en dagelijkse marktmonitoring",
-        "feature3": "Pre-screening van alle woningen",
-        "feature4": "Begeleide bezichtigingen en beoordeling",
-        "feature5": "Huurprijsonderhandeling",
-        "feature6": "Contractbeoordeling en uitleg",
-        "feature7": "Begeleiding bij overdracht en sleuteloverdracht",
-        "cta": "Start uw zoektocht"
+    "metaTitle": "Tarieven - Verhuur & Aanhuur Diensten | MMRE",
+    "metaDescription": "Transparante tarieven voor verhuur en aanhuur diensten in Amsterdam. Bekijk onze pakketten voor verhuurders en huurders.",
+    "title": "Tarieven",
+    "subtitle": "Transparante prijzen voor verhuur en aanhuur diensten",
+    "popular": "POPULAIR",
+    "cta": "Kies dit pakket",
+    "verhuur": {
+      "title": "Verhuur",
+      "subtitle": "Kies het pakket dat bij jou past",
+      "priceNote": "excl. btw (vast tarief, no cure no pay)",
+      "package1": {
+        "name": "Alleen Verhuur",
+        "feature1": "Plaatsing op Funda en Pararius",
+        "feature2": "Verspreiding in ons netwerk",
+        "feature3": "Uitvoeren van bezichtigingen",
+        "feature4": "Assistentie bij onderhandeling",
+        "feature5": "Screening van huurkandidaten",
+        "feature6": "Opmaak huurovereenkomst",
+        "feature7": "Check-in en inspectierapport"
       },
-      "relocationEssentials": {
-        "name": "Relocatie Essentials",
-        "description": "Woningzoeken plus alle essentiële inburgeringsdiensten om u snel operationeel te krijgen.",
-        "feature1": "Alles van Woningzoeken pakket",
-        "feature2": "Begeleiding gemeenteregistratie",
-        "feature3": "BSN-verkrijging ondersteuning",
-        "feature4": "Hulp bij openen bankrekening",
-        "feature5": "Zorgverzekering setup",
-        "feature6": "Nutsvoorzieningen en internet regelen",
-        "feature7": "DigiD aanvraag ondersteuning"
+      "package2": {
+        "name": "Plaatsing",
+        "feature1": "Alles van \"Alleen Verhuur\"",
+        "feature2": "Professionele fotoreportage",
+        "feature3": "Woningvideo",
+        "feature4": "NEN 2580 meetrapport"
       },
-      "fullRelocation": {
-        "name": "Volledige Relocatie",
-        "description": "Complete relocatie-ervaring inclusief immigratieondersteuning en gezinsintegratie.",
-        "feature1": "Alles van Relocatie Essentials pakket",
-        "feature2": "Immigratie en vergunningsbegeleiding",
-        "feature3": "30%-regeling aanvraagondersteuning",
-        "feature4": "Scholenzoektocht voor kinderen",
-        "feature5": "Partnercarrière ondersteuning",
-        "feature6": "Culturele oriëntatie en integratietips",
-        "feature7": "6 maanden nazorg en ondersteuning",
-        "cta": "Bespreek uw relocatie"
+      "package3": {
+        "name": "Alles in Één",
+        "feature1": "Alles van \"Plaatsing\"",
+        "feature2": "Officieel energielabel",
+        "feature3": "WWS-puntentelling",
+        "note": "Verplicht vanaf 29 mei 2026, ook voor monumenten"
+      },
+      "startFee": {
+        "label": "Starttarief: €350,- excl. btw",
+        "text": "— Volledig verrekend bij succesvolle plaatsing"
       }
     },
-    "corporateTitle": "Zakelijke relocatie",
-    "corporateText": "Heeft u meerdere werknemers die verhuizen of een doorlopende relocatiepartner nodig? Wij bieden op maat gemaakte zakelijke pakketten met dedicated accountbeheer, volumekortingen en gestroomlijnde rapportage.",
-    "corporateCta": "Bekijk zakelijke diensten",
-    "faqTitle": "Veelgestelde vragen",
-    "faq": {
-      "q1": "Wat is inbegrepen in de prijs?",
-      "a1": "Alle prijzen zijn eenmalige kosten die de volledige dienst dekken van intake tot afronding. Geen verborgen kosten of onverwachte toeslagen.",
-      "q2": "Wanneer betaal ik?",
-      "a2": "We vragen 50% aanbetaling bij aanvang van de dienst en 50% bij succesvolle afronding (bijv. ondertekening huurcontract of voltooiing inburgering).",
-      "q3": "Wat als u geen woning voor mij vindt?",
-      "a3": "Onze dienst is resultaatgericht. Als wij geen geschikte woning vinden die aan uw criteria voldoet, betaalt u alleen een minimale administratiekost voor de geleverde inspanningen.",
-      "q4": "Kunnen jullie de pakketten aanpassen?",
-      "a4": "Ja, we snappen dat iedereen unieke behoeften heeft. Neem contact met ons op om uw specifieke situatie te bespreken en wij maken een voorstel op maat."
+    "aanhuur": {
+      "title": "Aanhuur",
+      "subtitle": "Wij vinden jouw perfecte woning",
+      "priceTitle": "Ons tarief",
+      "price": "Één maand huur",
+      "priceMinimum": "min. €1.950 excl. btw",
+      "condition": "Conditie",
+      "noCureNoPay": "No cure, no pay",
+      "startFeeLabel": "Starttarief",
+      "startFeeAmount": "€250 incl. btw",
+      "startFeeNote": "Volledig verrekend bij succesvolle plaatsing",
+      "servicesTitle": "Wat we voor je doen",
+      "service1": "Volledige intake & zoekprofiel",
+      "service2": "Persoonlijke selectie van woningen",
+      "service3": "Advies over wijken en leefomgeving",
+      "service4": "WhatsApp-ondersteuning",
+      "service5": "Begeleide of virtuele bezichtigingen",
+      "service6": "Onderhandeling & juridische controle",
+      "service7": "Check-in en check-out ondersteuning",
+      "service8": "Hulp bij nutsvoorzieningen en verzekeringen",
+      "service9": "Sleuteloverdracht & nazorg",
+      "slogan": "Geen verrassingen. Geen verborgen kosten. Alleen persoonlijke, zorgeloze begeleiding."
     },
-    "ctaTitle": "Klaar om te beginnen?",
-    "ctaDescription": "Neem contact met ons op om uw situatie te bespreken en ontdek hoe wij uw verhuizing naar Amsterdam zorgeloos kunnen maken.",
-    "ctaWhatsapp": "Stuur ons een bericht",
-    "ctaPrimary": "Ontdek hoe we werken"
+    "ctaTitle": "Vragen over onze tarieven?",
+    "ctaDescription": "Neem contact met ons op voor een vrijblijvend gesprek over uw situatie.",
+    "ctaContact": "Neem contact op"
   },
   "howWeWork": {
     "title": "Hoe We Werken",

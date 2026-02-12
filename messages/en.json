@@ -711,73 +711,71 @@
     }
   },
   "pricing": {
+    "metaTitle": "Pricing - Rental & Tenant Services | MMRE",
+    "metaDescription": "Transparent pricing for rental and tenant services in Amsterdam. View our packages for landlords and tenants.",
     "title": "Pricing",
-    "subtitle": "Clear packages with no hidden fees",
-    "heroSubtitle": "Transparent, one-time fees. No hidden costs. No commission on your rent.",
-    "introTitle": "Simple, Transparent Pricing",
-    "introText1": "We believe in clear, upfront pricing. No hidden fees, no commission on your rent. You pay a one-time service fee and we handle everything included in your package.",
-    "introText2": "Not sure which package is right for you? Contact us for a free consultation and we'll recommend the best option based on your situation.",
-    "choosePackage": "Choose Your Package",
-    "packagesSubtitle": "All packages include personal guidance and WhatsApp support",
-    "oneTimeFee": "one-time fee",
-    "contactForPricing": "Contact us for pricing",
-    "included": "Included",
-    "optional": "Optional",
-    "packages": {
-      "homeFinding": {
-        "name": "Home Finding",
-        "description": "Focused rental search with full guidance from intake to key handover.",
-        "feature1": "Personal intake & living profile",
-        "feature2": "Active property search",
-        "feature3": "Accompanied viewings",
-        "feature4": "Rental price negotiation",
-        "feature5": "Contract review",
-        "feature6": "Handover & key transfer support",
-        "feature7": "WhatsApp support throughout",
-        "cta": "Start Home Search"
+    "subtitle": "Transparent pricing for rental and tenant services",
+    "popular": "POPULAR",
+    "cta": "Choose this package",
+    "verhuur": {
+      "title": "Rental Services",
+      "subtitle": "Choose the package that suits you",
+      "priceNote": "excl. VAT (fixed rate, no cure no pay)",
+      "package1": {
+        "name": "Rental Only",
+        "feature1": "Listing on Funda and Pararius",
+        "feature2": "Distribution in our network",
+        "feature3": "Conducting viewings",
+        "feature4": "Negotiation assistance",
+        "feature5": "Tenant screening",
+        "feature6": "Rental agreement preparation",
+        "feature7": "Check-in and inspection report"
       },
-      "relocationEssentials": {
-        "name": "Relocation Essentials",
-        "description": "Home finding plus essential settling-in services for a smooth start.",
-        "feature1": "Everything in Home Finding",
-        "feature2": "Municipality registration & BSN",
-        "feature3": "Bank account opening support",
-        "feature4": "Health insurance arrangement",
-        "feature5": "Utilities & internet setup",
-        "feature6": "DigiD application guidance",
-        "feature7": "First-month check-in"
+      "package2": {
+        "name": "Placement",
+        "feature1": "Everything from \"Rental Only\"",
+        "feature2": "Professional photo shoot",
+        "feature3": "Property video",
+        "feature4": "NEN 2580 measurement report"
       },
-      "fullRelocation": {
-        "name": "Full Relocation",
-        "description": "Complete relocation support including immigration and family services.",
-        "feature1": "Everything in Relocation Essentials",
-        "feature2": "Immigration & permit support",
-        "feature3": "30% ruling application guidance",
-        "feature4": "School search for children",
-        "feature5": "Partner career orientation",
-        "feature6": "Cultural integration session",
-        "feature7": "Ongoing support (3 months)",
-        "cta": "Discuss Full Package"
+      "package3": {
+        "name": "All-in-One",
+        "feature1": "Everything from \"Placement\"",
+        "feature2": "Official energy label",
+        "feature3": "WWS point calculation",
+        "note": "Mandatory from May 29, 2026, including for monuments"
+      },
+      "startFee": {
+        "label": "Start fee: €350,- excl. VAT",
+        "text": "— Fully deducted upon successful placement"
       }
     },
-    "corporateTitle": "Corporate Packages",
-    "corporateText": "For companies relocating multiple employees, we offer customized corporate packages with volume pricing, dedicated account management, and consolidated reporting.",
-    "corporateCta": "Learn About Corporate Services",
-    "faqTitle": "Pricing FAQ",
-    "faq": {
-      "q1": "When do I pay?",
-      "a1": "You pay after we successfully find and secure your rental home. No upfront fees — we only charge upon completion.",
-      "q2": "What if you don't find a home?",
-      "a2": "If we're unable to find a suitable property within the agreed timeframe, you don't pay. No cure, no pay.",
-      "q3": "Are there any additional costs?",
-      "a3": "No. The package price covers all our services. Third-party costs (like legalization fees or translation) are separate and communicated upfront.",
-      "q4": "Can I customize a package?",
-      "a4": "Yes. If your situation doesn't fit neatly into one of our standard packages, contact us and we'll create a tailored solution."
+    "aanhuur": {
+      "title": "Tenant Services",
+      "subtitle": "We find your perfect home",
+      "priceTitle": "Our fee",
+      "price": "One month rent",
+      "priceMinimum": "min. €1,950 excl. VAT",
+      "condition": "Condition",
+      "noCureNoPay": "No cure, no pay",
+      "startFeeLabel": "Start fee",
+      "startFeeAmount": "€250 incl. VAT",
+      "startFeeNote": "Fully deducted upon successful placement",
+      "servicesTitle": "What we do for you",
+      "service1": "Full intake & search profile",
+      "service2": "Personal property selection",
+      "service3": "Advice on neighborhoods and living environment",
+      "service4": "WhatsApp support",
+      "service5": "Accompanied or virtual viewings",
+      "service6": "Negotiation & legal review",
+      "service7": "Check-in and check-out support",
+      "service8": "Help with utilities and insurance",
+      "service9": "Key handover & aftercare",
+      "slogan": "No surprises. No hidden costs. Just personal, worry-free guidance."
     },
-    "ctaTitle": "Not Sure Which Package?",
-    "ctaDescription": "Contact us for a free consultation. We'll recommend the best package based on your situation.",
-    "ctaWhatsapp": "Get Free Consultation",
-    "ctaPrimary": "View How We Work"
+    "ctaTitle": "Questions about our pricing?",
+    "ctaDescription": "Contact us for a no-obligation conversation about your situation.",
+    "ctaContact": "Contact us"
   },
   "howWeWork": {
     "title": "How We Work",

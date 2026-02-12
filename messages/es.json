@@ -711,73 +711,71 @@
     }
   },
   "pricing": {
+    "metaTitle": "Precios - Servicios de Alquiler | MMRE",
+    "metaDescription": "Precios transparentes para servicios de alquiler en Ámsterdam. Vea nuestros paquetes para propietarios e inquilinos.",
     "title": "Precios",
-    "subtitle": "Paquetes claros sin costos ocultos",
-    "heroSubtitle": "Tarifas únicas transparentes. Sin costos ocultos. Sin comisión sobre su alquiler.",
-    "introTitle": "Precios Simples y Transparentes",
-    "introText1": "Creemos en precios claros y directos. Sin tarifas ocultas, sin comisión sobre su alquiler. Paga una tarifa única de servicio y nosotros manejamos todo lo incluido en su paquete.",
-    "introText2": "¿No está seguro qué paquete es el adecuado para usted? Contáctenos para una consulta gratuita y le recomendaremos la mejor opción según su situación.",
-    "choosePackage": "Elija su Paquete",
-    "packagesSubtitle": "Todos los paquetes incluyen orientación personal y soporte por WhatsApp",
-    "oneTimeFee": "tarifa única",
-    "contactForPricing": "Contáctenos para precios",
-    "included": "Incluido",
-    "optional": "Opcional",
-    "packages": {
-      "homeFinding": {
-        "name": "Búsqueda de Vivienda",
-        "description": "Búsqueda de alquiler enfocada con orientación completa desde la entrevista hasta la entrega de llaves.",
-        "feature1": "Entrevista personal y perfil de vida",
-        "feature2": "Búsqueda activa de propiedades",
-        "feature3": "Visitas acompañadas",
-        "feature4": "Negociación de precio de alquiler",
-        "feature5": "Revisión de contrato",
-        "feature6": "Soporte en entrega y transferencia de llaves",
-        "feature7": "Soporte por WhatsApp durante todo el proceso",
-        "cta": "Iniciar Búsqueda de Vivienda"
+    "subtitle": "Precios transparentes para servicios de alquiler",
+    "popular": "POPULAR",
+    "cta": "Elegir este paquete",
+    "verhuur": {
+      "title": "Servicios para Propietarios",
+      "subtitle": "Elige el paquete que te conviene",
+      "priceNote": "sin IVA (tarifa fija, sin resultado sin pago)",
+      "package1": {
+        "name": "Solo Alquiler",
+        "feature1": "Publicación en Funda y Pararius",
+        "feature2": "Distribución en nuestra red",
+        "feature3": "Realización de visitas",
+        "feature4": "Asistencia en negociación",
+        "feature5": "Selección de inquilinos",
+        "feature6": "Preparación del contrato de alquiler",
+        "feature7": "Check-in e informe de inspección"
       },
-      "relocationEssentials": {
-        "name": "Reubicación Esencial",
-        "description": "Búsqueda de vivienda más servicios esenciales de establecimiento para un inicio fluido.",
-        "feature1": "Todo en Búsqueda de Vivienda",
-        "feature2": "Registro municipal y BSN",
-        "feature3": "Soporte para apertura de cuenta bancaria",
-        "feature4": "Arreglo de seguro de salud",
-        "feature5": "Configuración de servicios e internet",
-        "feature6": "Orientación para solicitud de DigiD",
-        "feature7": "Seguimiento del primer mes"
+      "package2": {
+        "name": "Colocación",
+        "feature1": "Todo de \"Solo Alquiler\"",
+        "feature2": "Sesión fotográfica profesional",
+        "feature3": "Video de la propiedad",
+        "feature4": "Informe de medición NEN 2580"
       },
-      "fullRelocation": {
-        "name": "Reubicación Completa",
-        "description": "Soporte completo de reubicación incluyendo inmigración y servicios familiares.",
-        "feature1": "Todo en Reubicación Esencial",
-        "feature2": "Soporte de inmigración y permisos",
-        "feature3": "Orientación para solicitud de regla del 30%",
-        "feature4": "Búsqueda de escuelas para niños",
-        "feature5": "Orientación profesional para pareja",
-        "feature6": "Sesión de integración cultural",
-        "feature7": "Soporte continuo (3 meses)",
-        "cta": "Discutir Paquete Completo"
+      "package3": {
+        "name": "Todo en Uno",
+        "feature1": "Todo de \"Colocación\"",
+        "feature2": "Etiqueta energética oficial",
+        "feature3": "Cálculo de puntos WWS",
+        "note": "Obligatorio desde el 29 de mayo de 2026, también para monumentos"
+      },
+      "startFee": {
+        "label": "Tarifa inicial: €350,- sin IVA",
+        "text": "— Totalmente deducida tras colocación exitosa"
       }
     },
-    "corporateTitle": "Paquetes Corporativos",
-    "corporateText": "Para empresas que reubican múltiples empleados, ofrecemos paquetes corporativos personalizados con precios por volumen, gestión de cuenta dedicada e informes consolidados.",
-    "corporateCta": "Conocer Servicios Corporativos",
-    "faqTitle": "Preguntas Frecuentes sobre Precios",
-    "faq": {
-      "q1": "¿Cuándo pago?",
-      "a1": "Paga después de que encontremos y aseguremos exitosamente su vivienda de alquiler. Sin tarifas por adelantado — solo cobramos al finalizar.",
-      "q2": "¿Qué pasa si no encuentran vivienda?",
-      "a2": "Si no podemos encontrar una propiedad adecuada dentro del plazo acordado, no paga. Sin resultado, sin pago.",
-      "q3": "¿Hay costos adicionales?",
-      "a3": "No. El precio del paquete cubre todos nuestros servicios. Los costos de terceros (como tarifas de legalización o traducción) son separados y comunicados por adelantado.",
-      "q4": "¿Puedo personalizar un paquete?",
-      "a4": "Sí. Si su situación no encaja exactamente en uno de nuestros paquetes estándar, contáctenos y crearemos una solución a medida."
+    "aanhuur": {
+      "title": "Servicios para Inquilinos",
+      "subtitle": "Encontramos tu hogar perfecto",
+      "priceTitle": "Nuestra tarifa",
+      "price": "Un mes de alquiler",
+      "priceMinimum": "mín. €1.950 sin IVA",
+      "condition": "Condición",
+      "noCureNoPay": "Sin resultado, sin pago",
+      "startFeeLabel": "Tarifa inicial",
+      "startFeeAmount": "€250 con IVA",
+      "startFeeNote": "Totalmente deducida tras colocación exitosa",
+      "servicesTitle": "Lo que hacemos por ti",
+      "service1": "Entrevista completa y perfil de búsqueda",
+      "service2": "Selección personal de propiedades",
+      "service3": "Asesoramiento sobre barrios y entorno",
+      "service4": "Soporte por WhatsApp",
+      "service5": "Visitas acompañadas o virtuales",
+      "service6": "Negociación y revisión legal",
+      "service7": "Soporte de check-in y check-out",
+      "service8": "Ayuda con servicios y seguros",
+      "service9": "Entrega de llaves y seguimiento",
+      "slogan": "Sin sorpresas. Sin costos ocultos. Solo orientación personal y sin preocupaciones."
     },
-    "ctaTitle": "¿No Está Seguro Qué Paquete?",
-    "ctaDescription": "Contáctenos para una consulta gratuita. Le recomendaremos el mejor paquete según su situación.",
-    "ctaWhatsapp": "Obtener Consulta Gratuita",
-    "ctaPrimary": "Ver Cómo Trabajamos"
+    "ctaTitle": "¿Preguntas sobre nuestros precios?",
+    "ctaDescription": "Contáctenos para una conversación sin compromiso sobre su situación.",
+    "ctaContact": "Contáctenos"
   },
   "howWeWork": {
     "title": "Cómo Trabajamos",
