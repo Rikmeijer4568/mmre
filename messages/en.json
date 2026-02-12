@@ -723,13 +723,15 @@
       "priceNote": "excl. VAT (fixed rate, no cure no pay)",
       "package1": {
         "name": "Rental Only",
+        "badge": "Online today",
         "feature1": "Listing on Funda and Pararius",
         "feature2": "Distribution in our network",
         "feature3": "Conducting viewings",
         "feature4": "Negotiation assistance",
         "feature5": "Tenant screening",
         "feature6": "Rental agreement preparation",
-        "feature7": "Check-in and inspection report"
+        "feature7": "Check-in and inspection report",
+        "disclaimer": "* Professional photos must be provided by you"
       },
       "package2": {
         "name": "Placement",

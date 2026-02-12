@@ -723,13 +723,15 @@
       "priceNote": "excl. btw (vast tarief, no cure no pay)",
       "package1": {
         "name": "Alleen Verhuur",
+        "badge": "Vandaag nog online",
         "feature1": "Plaatsing op Funda en Pararius",
         "feature2": "Verspreiding in ons netwerk",
         "feature3": "Uitvoeren van bezichtigingen",
         "feature4": "Assistentie bij onderhandeling",
         "feature5": "Screening van huurkandidaten",
         "feature6": "Opmaak huurovereenkomst",
-        "feature7": "Check-in en inspectierapport"
+        "feature7": "Check-in en inspectierapport",
+        "disclaimer": "* Professionele foto's dienen zelf aangeleverd te worden"
       },
       "package2": {
         "name": "Plaatsing",

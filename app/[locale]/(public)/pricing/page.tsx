@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
-import { Check, ArrowRight, Star, Home, Search, MessageSquare, Eye, FileText, Key, Wrench, Shield } from 'lucide-react'
+import { Check, ArrowRight, Star, Home, Search, MessageSquare, Eye, FileText, Key, Wrench, Shield, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { getTranslations } from 'next-intl/server'
 
@@ -20,6 +20,7 @@ export default async function PricingPage() {
       name: t('verhuur.package1.name'),
       price: '€499,-',
       priceNote: t('verhuur.priceNote'),
+      badge: t('verhuur.package1.badge'),
       features: [
         t('verhuur.package1.feature1'),
         t('verhuur.package1.feature2'),
@@ -29,6 +30,7 @@ export default async function PricingPage() {
         t('verhuur.package1.feature6'),
         t('verhuur.package1.feature7'),
       ],
+      disclaimer: t('verhuur.package1.disclaimer'),
     },
     {
       name: t('verhuur.package2.name'),
@@ -115,6 +117,15 @@ export default async function PricingPage() {
                   </div>
                 )}
 
+                {pkg.badge && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex items-center gap-1 bg-amber-500 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
+                      <Zap className="h-4 w-4 fill-current" />
+                      {pkg.badge}
+                    </span>
+                  </div>
+                )}
+
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {pkg.name}
@@ -135,6 +146,12 @@ export default async function PricingPage() {
                     </li>
                   ))}
                 </ul>
+
+                {pkg.disclaimer && (
+                  <p className="text-sm text-gray-500 italic mb-6">
+                    {pkg.disclaimer}
+                  </p>
+                )}
 
                 {pkg.note && (
                   <p className="text-sm text-amber-600 bg-amber-50 rounded-lg p-3 mb-6">

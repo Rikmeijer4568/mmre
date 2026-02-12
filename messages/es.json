@@ -723,13 +723,15 @@
       "priceNote": "sin IVA (tarifa fija, sin resultado sin pago)",
       "package1": {
         "name": "Solo Alquiler",
+        "badge": "Online hoy",
         "feature1": "Publicación en Funda y Pararius",
         "feature2": "Distribución en nuestra red",
         "feature3": "Realización de visitas",
         "feature4": "Asistencia en negociación",
         "feature5": "Selección de inquilinos",
         "feature6": "Preparación del contrato de alquiler",
-        "feature7": "Check-in e informe de inspección"
+        "feature7": "Check-in e informe de inspección",
+        "disclaimer": "* Fotos profesionales deben ser proporcionadas por usted"
       },
       "package2": {
         "name": "Colocación",
