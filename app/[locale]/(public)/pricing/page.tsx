@@ -117,19 +117,16 @@ export default async function PricingPage() {
                   </div>
                 )}
 
-                {pkg.badge && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1 bg-amber-500 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
-                      <Zap className="h-4 w-4 fill-current" />
-                      {pkg.badge}
-                    </span>
-                  </div>
-                )}
-
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {pkg.name}
                   </h3>
+                  {pkg.badge && (
+                    <span className="inline-flex items-center gap-1.5 bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                      <Zap className="h-3.5 w-3.5" />
+                      {pkg.badge}
+                    </span>
+                  )}
                   <div className="text-4xl font-bold text-accent">
                     {pkg.price}
                   </div>
