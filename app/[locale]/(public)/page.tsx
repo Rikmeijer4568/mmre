@@ -24,70 +24,87 @@ async function HeroSection() {
       }} />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-        <div className="max-w-3xl">
-          <AnimatedSection variants={fadeInUp}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-balance">
-              {t('title')}
-            </h1>
-          </AnimatedSection>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left column - Text content */}
+          <div>
+            <AnimatedSection variants={fadeInUp}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-balance">
+                {t('title')}
+              </h1>
+            </AnimatedSection>
 
-          <AnimatedSection variants={fadeInUp} delay={0.1}>
-            <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-gray-200 max-w-2xl leading-relaxed">
-              {t('subtitle')}
-            </p>
-          </AnimatedSection>
+            <AnimatedSection variants={fadeInUp} delay={0.1}>
+              <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-gray-200 max-w-2xl leading-relaxed">
+                {t('subtitle')}
+              </p>
+            </AnimatedSection>
 
-          <AnimatedSection variants={fadeInUp} delay={0.2}>
-            <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-white text-accent hover:bg-gray-100 shadow-soft-lg hover:shadow-soft-xl
-                           transition-all duration-300 hover:-translate-y-0.5"
-                asChild
-              >
-                <Link href="/rent-out">
-                  {t('rentOutProperty')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50
-                           backdrop-blur-sm transition-all duration-300"
-                asChild
-              >
-                <Link href="/services/home-finding">
-                  {t('findRentalHome')}
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-          </AnimatedSection>
+            <AnimatedSection variants={fadeInUp} delay={0.2}>
+              <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="bg-white text-accent hover:bg-gray-100 shadow-soft-lg hover:shadow-soft-xl
+                             transition-all duration-300 hover:-translate-y-0.5"
+                  asChild
+                >
+                  <Link href="/rent-out">
+                    {t('rentOutProperty')}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50
+                             backdrop-blur-sm transition-all duration-300"
+                  asChild
+                >
+                  <Link href="/services/home-finding">
+                    {t('findRentalHome')}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+            </AnimatedSection>
 
-          {/* Trust Bar */}
-          <AnimatedSection variants={fadeInUp} delay={0.3}>
-            <div className="mt-12 sm:mt-16 pt-8 border-t border-white/10">
-              <div className="flex flex-wrap gap-6 sm:gap-10 text-sm text-gray-200">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-white/10 rounded-lg backdrop-blur-sm">
-                    <Users className="h-5 w-5" />
+            {/* Trust Bar */}
+            <AnimatedSection variants={fadeInUp} delay={0.3}>
+              <div className="mt-12 sm:mt-16 pt-8 border-t border-white/10">
+                <div className="flex flex-wrap gap-6 sm:gap-10 text-sm text-gray-200">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-white/10 rounded-lg backdrop-blur-sm">
+                      <Users className="h-5 w-5" />
+                    </div>
+                    <span>500+ {t('satisfiedClients')}</span>
                   </div>
-                  <span>500+ {t('satisfiedClients')}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-white/10 rounded-lg backdrop-blur-sm">
-                    <Clock className="h-5 w-5" />
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-white/10 rounded-lg backdrop-blur-sm">
+                      <Clock className="h-5 w-5" />
+                    </div>
+                    <span>{t('whatsappSupport')}</span>
                   </div>
-                  <span>{t('whatsappSupport')}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-white/10 rounded-lg backdrop-blur-sm">
-                    <Shield className="h-5 w-5" />
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-white/10 rounded-lg backdrop-blur-sm">
+                      <Shield className="h-5 w-5" />
+                    </div>
+                    <span>{t('premiumService')}</span>
                   </div>
-                  <span>{t('premiumService')}</span>
                 </div>
               </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Right column - Hero image */}
+          <AnimatedSection variants={fadeInUp} delay={0.2} className="hidden lg:block">
+            <div className="relative">
+              <Image
+                src="/images/Header/Header.png"
+                alt="MMRE Real Estate"
+                width={600}
+                height={500}
+                className="w-full h-auto rounded-2xl shadow-2xl"
+                priority
+              />
             </div>
           </AnimatedSection>
         </div>
