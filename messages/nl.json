@@ -719,10 +719,10 @@
     "cta": "Kies dit pakket",
     "verhuur": {
       "title": "Verhuur",
-      "subtitle": "Kies het pakket dat bij jou past",
+      "subtitle": "Kies het pakket dat bij je past",
       "priceNote": "excl. btw (vast tarief, no cure no pay)",
       "package1": {
-        "name": "Alleen Verhuur",
+        "name": "Alleen verhuur",
         "badge": "Vandaag nog online",
         "feature1": "Plaatsing op Funda en Pararius",
         "feature2": "Verspreiding in ons netwerk",
@@ -741,7 +741,7 @@
         "feature4": "NEN 2580 meetrapport"
       },
       "package3": {
-        "name": "Alles in Één",
+        "name": "Alles-in-één",
         "feature1": "Alles van \"Plaatsing\"",
         "feature2": "Officieel energielabel",
         "feature3": "WWS-puntentelling",
@@ -754,7 +754,7 @@
     },
     "aanhuur": {
       "title": "Aanhuur",
-      "subtitle": "Wij vinden jouw perfecte woning",
+      "subtitle": "Wij vinden je perfecte woning",
       "priceTitle": "Ons tarief",
       "price": "Één maand huur",
       "priceMinimum": "min. €1.950 excl. btw",

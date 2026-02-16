@@ -88,11 +88,11 @@ export default async function PricingPage() {
       {/* Verhuur Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <div className="text-center mb-12 bg-accent rounded-2xl py-8 px-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               {t('verhuur.title')}
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <p className="mt-4 text-lg text-white/80">
               {t('verhuur.subtitle')}
             </p>
           </div>
@@ -181,11 +181,11 @@ export default async function PricingPage() {
       {/* Aanhuur Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <div className="text-center mb-12 bg-accent rounded-2xl py-8 px-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               {t('aanhuur.title')}
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <p className="mt-4 text-lg text-white/80">
               {t('aanhuur.subtitle')}
             </p>
           </div>

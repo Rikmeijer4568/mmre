@@ -718,11 +718,11 @@
     "popular": "POPULAR",
     "cta": "Choose this package",
     "verhuur": {
-      "title": "Rental Services",
+      "title": "Rental services",
       "subtitle": "Choose the package that suits you",
       "priceNote": "excl. VAT (fixed rate, no cure no pay)",
       "package1": {
-        "name": "Rental Only",
+        "name": "Rental only",
         "badge": "Online today",
         "feature1": "Listing on Funda and Pararius",
         "feature2": "Distribution in our network",
@@ -741,7 +741,7 @@
         "feature4": "NEN 2580 measurement report"
       },
       "package3": {
-        "name": "All-in-One",
+        "name": "All-in-one",
         "feature1": "Everything from \"Placement\"",
         "feature2": "Official energy label",
         "feature3": "WWS point calculation",
@@ -753,7 +753,7 @@
       }
     },
     "aanhuur": {
-      "title": "Tenant Services",
+      "title": "Tenant services",
       "subtitle": "We find your perfect home",
       "priceTitle": "Our fee",
       "price": "One month rent",

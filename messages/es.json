@@ -718,11 +718,11 @@
     "popular": "POPULAR",
     "cta": "Elegir este paquete",
     "verhuur": {
-      "title": "Servicios para Propietarios",
+      "title": "Servicios para propietarios",
       "subtitle": "Elige el paquete que te conviene",
       "priceNote": "sin IVA (tarifa fija, sin resultado sin pago)",
       "package1": {
-        "name": "Solo Alquiler",
+        "name": "Solo alquiler",
         "badge": "Online hoy",
         "feature1": "Publicación en Funda y Pararius",
         "feature2": "Distribución en nuestra red",
@@ -741,7 +741,7 @@
         "feature4": "Informe de medición NEN 2580"
       },
       "package3": {
-        "name": "Todo en Uno",
+        "name": "Todo en uno",
         "feature1": "Todo de \"Colocación\"",
         "feature2": "Etiqueta energética oficial",
         "feature3": "Cálculo de puntos WWS",
@@ -753,7 +753,7 @@
       }
     },
     "aanhuur": {
-      "title": "Servicios para Inquilinos",
+      "title": "Servicios para inquilinos",
       "subtitle": "Encontramos tu hogar perfecto",
       "priceTitle": "Nuestra tarifa",
       "price": "Un mes de alquiler",
