@@ -28,7 +28,7 @@ async function HeroSection() {
           {/* Left column - Text content */}
           <div>
             <AnimatedSection variants={fadeInUp}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-balance">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-balance text-white">
                 {t('title')}
               </h1>
             </AnimatedSection>
