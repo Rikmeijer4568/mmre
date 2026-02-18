@@ -776,6 +776,32 @@
       "service9": "Entrega de llaves y seguimiento",
       "slogan": "Sin sorpresas. Sin costos ocultos. Solo orientación personal y sin preocupaciones."
     },
+    "beheer": {
+      "title": "Gestión",
+      "subtitle": "Permítanos gestionar profesionalmente su propiedad",
+      "priceNote": "por mes sin IVA",
+      "learnMore": "Más sobre gestión de propiedades",
+      "package1": {
+        "name": "Gestión financiera",
+        "feature1": "Cobro mensual de alquiler",
+        "feature2": "Recordatorios de pago",
+        "feature3": "Informes financieros",
+        "feature4": "Aumento anual de alquiler"
+      },
+      "package2": {
+        "name": "Gestión técnica",
+        "feature1": "Gestión de mantenimiento",
+        "feature2": "Coordinación de reparaciones",
+        "feature3": "Inspección anual de propiedad",
+        "feature4": "Línea de emergencia 24/7 para inquilinos"
+      },
+      "package3": {
+        "name": "Gestión completa",
+        "feature1": "Gestión financiera + técnica",
+        "feature2": "Tranquilidad total",
+        "feature3": "Punto de contacto único"
+      }
+    },
     "ctaTitle": "¿Preguntas sobre nuestros precios?",
     "ctaDescription": "Contáctenos para una conversación sin compromiso sobre su situación.",
     "ctaContact": "Contáctenos"
@@ -978,10 +1004,32 @@
     "benefit5": "Equipo experimentado con conocimiento del mercado local",
     "benefit6": "Contratos flexibles, cancelación mensual",
     "pricingTitle": "Precios",
-    "pricingPercentage": "5-8%",
-    "pricingNote": "del alquiler mensual",
-    "pricingDisclaimer": "El precio depende del número de propiedades y servicios deseados. Solicite un presupuesto gratuito.",
-    "pricingCta": "Solicitar presupuesto",
+    "pricingSubtitle": "Elija el paquete que más le convenga",
+    "priceNote": "por mes sin IVA",
+    "popular": "POPULAR",
+    "packages": {
+      "financial": {
+        "name": "Gestión financiera",
+        "feature1": "Cobro mensual de alquiler",
+        "feature2": "Recordatorios de pago",
+        "feature3": "Informes financieros",
+        "feature4": "Aumento anual de alquiler"
+      },
+      "technical": {
+        "name": "Gestión técnica",
+        "feature1": "Gestión de mantenimiento",
+        "feature2": "Coordinación de reparaciones",
+        "feature3": "Inspección anual de propiedad",
+        "feature4": "Línea de emergencia 24/7 para inquilinos"
+      },
+      "complete": {
+        "name": "Gestión completa",
+        "feature1": "Gestión financiera + técnica",
+        "feature2": "Tranquilidad total",
+        "feature3": "Punto de contacto único"
+      }
+    },
+    "pricingCta": "Elegir este paquete",
     "ctaTitle": "¿Listo para que gestionemos su propiedad?",
     "ctaDescription": "Contáctenos para una conversación sin compromiso sobre su situación.",
     "ctaContact": "Contáctenos"

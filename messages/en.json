@@ -776,6 +776,32 @@
       "service9": "Key handover & aftercare",
       "slogan": "No surprises. No hidden costs. Just personal, worry-free guidance."
     },
+    "beheer": {
+      "title": "Management",
+      "subtitle": "Let us professionally manage your property",
+      "priceNote": "per month excl. VAT",
+      "learnMore": "More about property management",
+      "package1": {
+        "name": "Financial management",
+        "feature1": "Monthly rent collection",
+        "feature2": "Payment reminders",
+        "feature3": "Financial reports",
+        "feature4": "Annual rent increase"
+      },
+      "package2": {
+        "name": "Technical management",
+        "feature1": "Maintenance management",
+        "feature2": "Repair coordination",
+        "feature3": "Annual property inspection",
+        "feature4": "24/7 emergency line for tenants"
+      },
+      "package3": {
+        "name": "Complete management",
+        "feature1": "Financial + technical management",
+        "feature2": "Full peace of mind",
+        "feature3": "Single point of contact"
+      }
+    },
     "ctaTitle": "Questions about our pricing?",
     "ctaDescription": "Contact us for a no-obligation conversation about your situation.",
     "ctaContact": "Contact us"
@@ -978,10 +1004,32 @@
     "benefit5": "Experienced team with local market knowledge",
     "benefit6": "Flexible contracts, cancel monthly",
     "pricingTitle": "Pricing",
-    "pricingPercentage": "5-8%",
-    "pricingNote": "of monthly rent",
-    "pricingDisclaimer": "Rate depends on number of properties and desired services. Request a free quote.",
-    "pricingCta": "Request quote",
+    "pricingSubtitle": "Choose the package that suits you",
+    "priceNote": "per month excl. VAT",
+    "popular": "POPULAR",
+    "packages": {
+      "financial": {
+        "name": "Financial management",
+        "feature1": "Monthly rent collection",
+        "feature2": "Payment reminders",
+        "feature3": "Financial reports",
+        "feature4": "Annual rent increase"
+      },
+      "technical": {
+        "name": "Technical management",
+        "feature1": "Maintenance management",
+        "feature2": "Repair coordination",
+        "feature3": "Annual property inspection",
+        "feature4": "24/7 emergency line for tenants"
+      },
+      "complete": {
+        "name": "Complete management",
+        "feature1": "Financial + technical management",
+        "feature2": "Full peace of mind",
+        "feature3": "Single point of contact"
+      }
+    },
+    "pricingCta": "Choose this package",
     "ctaTitle": "Ready to have your property managed?",
     "ctaDescription": "Contact us for a no-obligation conversation about your situation.",
     "ctaContact": "Contact us"

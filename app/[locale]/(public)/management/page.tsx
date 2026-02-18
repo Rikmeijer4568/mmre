@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
-import { ArrowRight, Home, Shield, Wrench, Users, Clock, CheckCircle2, MessageCircle } from 'lucide-react'
+import { ArrowRight, Home, Shield, Wrench, Users, Clock, CheckCircle2, MessageCircle, Check, Star, Calculator, Briefcase } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { getTranslations } from 'next-intl/server'
@@ -23,6 +23,28 @@ export default async function ManagementPage() {
     { icon: Wrench, key: 'maintenance' },
     { icon: Shield, key: 'legalCompliance' },
     { icon: Clock, key: 'availability' },
+  ]
+
+  const packages = [
+    {
+      key: 'financial',
+      price: '€99,-',
+      icon: Calculator,
+      featureCount: 4,
+    },
+    {
+      key: 'technical',
+      price: '€119,-',
+      icon: Wrench,
+      featureCount: 4,
+    },
+    {
+      key: 'complete',
+      price: '€140,-',
+      icon: Briefcase,
+      popular: true,
+      featureCount: 3,
+    },
   ]
 
   const benefits = [
@@ -111,56 +133,91 @@ export default async function ManagementPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Pricing Section */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
-                {t('benefitsTitle')}
-              </h2>
-              <p className="mt-4 text-lg text-gray-600">
-                {t('benefitsSubtitle')}
-              </p>
-              <ul className="mt-8 space-y-4">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="text-center mb-12 bg-accent rounded-2xl py-8 px-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              {t('pricingTitle')}
+            </h2>
+            <p className="mt-4 text-lg text-white/80">
+              {t('pricingSubtitle')}
+            </p>
+          </div>
 
-            <div className="relative">
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary-50 rounded-full blur-2xl opacity-60" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-highlight rounded-full blur-2xl opacity-60" />
-
-              <div className="relative bg-white rounded-2xl border border-gray-200 p-8 shadow-premium">
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">
-                  {t('pricingTitle')}
-                </h3>
-                <div className="text-center py-6">
-                  <div className="text-4xl sm:text-5xl font-bold text-accent">
-                    {t('pricingPercentage')}
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+            {packages.map((pkg) => (
+              <div
+                key={pkg.key}
+                className={`relative bg-white rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
+                  pkg.popular
+                    ? 'border-accent shadow-lg scale-105'
+                    : 'border-gray-200 hover:border-accent/50'
+                }`}
+              >
+                {pkg.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex items-center gap-1 bg-accent text-white text-sm font-semibold px-4 py-1.5 rounded-full">
+                      <Star className="h-4 w-4 fill-current" />
+                      {t('popular')}
+                    </span>
                   </div>
-                  <p className="text-gray-600 mt-2">
-                    {t('pricingNote')}
+                )}
+
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl mb-4">
+                    <pkg.icon className="h-7 w-7 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {t(`packages.${pkg.key}.name`)}
+                  </h3>
+                  <div className="text-4xl font-bold text-accent">
+                    {pkg.price}
+                  </div>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {t('priceNote')}
                   </p>
                 </div>
-                <div className="pt-6 border-t border-gray-100">
-                  <p className="text-sm text-gray-500 text-center">
-                    {t('pricingDisclaimer')}
-                  </p>
-                </div>
-                <Button asChild className="w-full mt-6" size="lg">
+
+                <ul className="space-y-3 mb-8">
+                  {Array.from({ length: pkg.featureCount }, (_, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{t(`packages.${pkg.key}.feature${i + 1}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button asChild className="w-full" variant={pkg.popular ? 'default' : 'outline'}>
                   <Link href="/contact">
                     {t('pricingCta')}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+              {t('benefitsTitle')}
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              {t('benefitsSubtitle')}
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-start gap-3 bg-gray-50 rounded-xl p-5">
+                <CheckCircle2 className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700">{benefit}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

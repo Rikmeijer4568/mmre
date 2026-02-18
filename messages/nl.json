@@ -776,6 +776,32 @@
       "service9": "Sleuteloverdracht & nazorg",
       "slogan": "Geen verrassingen. Geen verborgen kosten. Alleen persoonlijke, zorgeloze begeleiding."
     },
+    "beheer": {
+      "title": "Beheer",
+      "subtitle": "Laat uw vastgoed professioneel beheren",
+      "priceNote": "per maand excl. btw",
+      "learnMore": "Meer over vastgoedbeheer",
+      "package1": {
+        "name": "Financieel beheer",
+        "feature1": "Maandelijkse huurincasso",
+        "feature2": "Betalingsherinneringen",
+        "feature3": "Financiële rapportages",
+        "feature4": "Jaarlijkse huurverhoging"
+      },
+      "package2": {
+        "name": "Technisch beheer",
+        "feature1": "Onderhoudsbeheer",
+        "feature2": "Coördinatie reparaties",
+        "feature3": "Jaarlijkse woninginspectie",
+        "feature4": "24/7 noodlijn voor huurders"
+      },
+      "package3": {
+        "name": "Compleet beheer",
+        "feature1": "Financieel + technisch beheer",
+        "feature2": "Volledige ontzorging",
+        "feature3": "Eén vast aanspreekpunt"
+      }
+    },
     "ctaTitle": "Vragen over onze tarieven?",
     "ctaDescription": "Neem contact met ons op voor een vrijblijvend gesprek over uw situatie.",
     "ctaContact": "Neem contact op"
@@ -978,10 +1004,32 @@
     "benefit5": "Ervaren team met lokale marktkennis",
     "benefit6": "Flexibele contracten, maandelijks opzegbaar",
     "pricingTitle": "Tarieven",
-    "pricingPercentage": "5-8%",
-    "pricingNote": "van de maandelijkse huur",
-    "pricingDisclaimer": "Tarief afhankelijk van aantal woningen en gewenste diensten. Vraag een vrijblijvende offerte aan.",
-    "pricingCta": "Offerte aanvragen",
+    "pricingSubtitle": "Kies het pakket dat bij u past",
+    "priceNote": "per maand excl. btw",
+    "popular": "POPULAIR",
+    "packages": {
+      "financial": {
+        "name": "Financieel beheer",
+        "feature1": "Maandelijkse huurincasso",
+        "feature2": "Betalingsherinneringen",
+        "feature3": "Financiële rapportages",
+        "feature4": "Jaarlijkse huurverhoging"
+      },
+      "technical": {
+        "name": "Technisch beheer",
+        "feature1": "Onderhoudsbeheer",
+        "feature2": "Coördinatie reparaties",
+        "feature3": "Jaarlijkse woninginspectie",
+        "feature4": "24/7 noodlijn voor huurders"
+      },
+      "complete": {
+        "name": "Compleet beheer",
+        "feature1": "Financieel + technisch beheer",
+        "feature2": "Volledige ontzorging",
+        "feature3": "Eén vast aanspreekpunt"
+      }
+    },
+    "pricingCta": "Kies dit pakket",
     "ctaTitle": "Klaar om uw vastgoed te laten beheren?",
     "ctaDescription": "Neem contact met ons op voor een vrijblijvend gesprek over uw situatie.",
     "ctaContact": "Neem contact op"
