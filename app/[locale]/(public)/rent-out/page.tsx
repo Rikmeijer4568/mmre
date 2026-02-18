@@ -80,10 +80,8 @@ export default async function RentOutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-accent to-accent-dark text-white py-12 sm:py-16 lg:py-28 overflow-hidden">
-        {/* Bottom gradient transition to gray */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-accent to-accent-dark text-white py-12 sm:py-16 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
             <div>
               <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight text-white">{t('title')}</h1>

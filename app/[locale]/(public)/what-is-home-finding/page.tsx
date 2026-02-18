@@ -46,10 +46,8 @@ export default async function WhatIsHomeFindingPage() {
 
   return (
     <>
-      <section className="relative bg-accent text-white py-20 lg:py-28 overflow-hidden">
-        {/* Bottom gradient transition to white */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-accent text-white py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-white">{t('title')}</h1>
             <p className="mt-6 text-xl text-white/90">{t('subtitle')}</p>

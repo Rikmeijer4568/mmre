@@ -111,10 +111,8 @@ export default async function PricingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-24 overflow-hidden">
-        {/* Bottom gradient transition to white */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white">
               {t('title')}

@@ -23,9 +23,6 @@ async function HeroSection() {
         backgroundSize: '32px 32px'
       }} />
 
-      {/* Bottom gradient transition to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left column - Text content */}

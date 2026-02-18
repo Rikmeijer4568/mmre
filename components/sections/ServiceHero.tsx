@@ -27,10 +27,8 @@ export function ServiceHero({
   secondaryCtaHref,
 }: ServiceHeroProps) {
   return (
-    <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-28 overflow-hidden">
-      {/* Bottom gradient transition to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav className="flex items-center gap-1 text-sm text-white/70 mb-6">
             <Link href="/" className="hover:text-white transition-colors">
