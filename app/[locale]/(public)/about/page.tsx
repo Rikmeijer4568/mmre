@@ -49,11 +49,13 @@ export default async function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-accent to-accent-dark text-white py-12 sm:py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-accent to-accent-dark text-white py-12 sm:py-16 lg:py-20 overflow-hidden">
+        {/* Bottom gradient transition to white */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold">{t('title')}</h1>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-200">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white">{t('title')}</h1>
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/90">
               {t('subtitle')}
             </p>
           </div>

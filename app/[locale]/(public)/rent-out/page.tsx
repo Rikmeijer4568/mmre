@@ -80,12 +80,14 @@ export default async function RentOutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-accent to-accent-dark text-white py-12 sm:py-16 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-gradient-to-br from-accent to-accent-dark text-white py-12 sm:py-16 lg:py-28 overflow-hidden">
+        {/* Bottom gradient transition to gray */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
             <div>
-              <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight">{t('title')}</h1>
-              <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-200">{t('subtitle')}</p>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight text-white">{t('title')}</h1>
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/90">{t('subtitle')}</p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-white text-accent hover:bg-gray-100" asChild>
                   <a href="#calculator">
@@ -232,8 +234,8 @@ export default async function RentOutPage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {stats.map((stat, idx) => (
               <div key={idx} className="text-center">
-                <p className="text-2xl sm:text-4xl font-bold">{stat.value}</p>
-                <p className="text-gray-200 mt-1 sm:mt-2 text-xs sm:text-base">{stat.label}</p>
+                <p className="text-2xl sm:text-4xl font-bold text-white">{stat.value}</p>
+                <p className="text-white/90 mt-1 sm:mt-2 text-xs sm:text-base">{stat.label}</p>
               </div>
             ))}
           </div>

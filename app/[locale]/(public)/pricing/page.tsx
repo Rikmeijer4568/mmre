@@ -111,13 +111,15 @@ export default async function PricingPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative bg-accent text-white py-12 sm:py-16 lg:py-24 overflow-hidden">
+        {/* Bottom gradient transition to white */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-white">
               {t('title')}
             </h1>
-            <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-200">
+            <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-white/90">
               {t('subtitle')}
             </p>
           </div>
@@ -377,10 +379,10 @@ export default async function PricingPage() {
       {/* CTA Section */}
       <section className="py-16 sm:py-20 bg-accent text-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
             {t('ctaTitle')}
           </h2>
-          <p className="text-lg text-gray-200 mb-8">
+          <p className="text-lg text-white/90 mb-8">
             {t('ctaDescription')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
