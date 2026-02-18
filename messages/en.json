@@ -18,6 +18,7 @@
     "learn": "Learn",
     "offerings": "Offerings",
     "neighborhoods": "Neighborhoods",
+    "management": "Management",
     "about": "About Us",
     "contact": "Contact",
     "homeFinding": "Home Finding",
@@ -937,5 +938,52 @@
     "whatsappCta": "WhatsApp Us",
     "propertyId": "Property ID",
     "publishedOn": "Listed on"
+  },
+  "management": {
+    "metaTitle": "Management - Property Management for Landlords | MMRE",
+    "metaDescription": "Professional property management in Amsterdam. From rent collection to maintenance, we take care of your property.",
+    "title": "Property management",
+    "subtitle": "Let us professionally manage your property. We take care of your tenants, maintenance, and administration so you don't have to worry about a thing.",
+    "cta": "Request a quote",
+    "servicesTitle": "Our management services",
+    "servicesSubtitle": "Complete property management for owners in Amsterdam",
+    "services": {
+      "tenantScreening": {
+        "title": "Tenant screening",
+        "description": "Thorough screening of potential tenants including income verification, references, and background checks."
+      },
+      "rentCollection": {
+        "title": "Rent collection",
+        "description": "Monthly rent collection and financial reporting. We follow up on any payment arrears."
+      },
+      "maintenance": {
+        "title": "Maintenance management",
+        "description": "Coordination of all repairs and maintenance. From small jobs to major renovations."
+      },
+      "legalCompliance": {
+        "title": "Legal compliance",
+        "description": "Ensure your rental complies with all laws and regulations, including rent price regulation and WWS."
+      },
+      "availability": {
+        "title": "24/7 availability",
+        "description": "Emergency line for tenants with urgent issues. Immediate action when needed."
+      }
+    },
+    "benefitsTitle": "Why choose MMRE management?",
+    "benefitsSubtitle": "We handle the work so you can enjoy your investment",
+    "benefit1": "Maximum rental income through professional letting",
+    "benefit2": "No hassle with tenants or maintenance",
+    "benefit3": "Full transparency via online portal",
+    "benefit4": "Legal protection and compliance",
+    "benefit5": "Experienced team with local market knowledge",
+    "benefit6": "Flexible contracts, cancel monthly",
+    "pricingTitle": "Pricing",
+    "pricingPercentage": "5-8%",
+    "pricingNote": "of monthly rent",
+    "pricingDisclaimer": "Rate depends on number of properties and desired services. Request a free quote.",
+    "pricingCta": "Request quote",
+    "ctaTitle": "Ready to have your property managed?",
+    "ctaDescription": "Contact us for a no-obligation conversation about your situation.",
+    "ctaContact": "Contact us"
   }
 }

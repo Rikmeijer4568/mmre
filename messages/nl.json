@@ -18,6 +18,7 @@
     "learn": "Informatie",
     "offerings": "Aanbod",
     "neighborhoods": "Wijken",
+    "management": "Beheer",
     "about": "Over ons",
     "contact": "Contact",
     "homeFinding": "Woningzoeken",
@@ -937,5 +938,52 @@
     "whatsappCta": "WhatsApp Ons",
     "propertyId": "Woning ID",
     "publishedOn": "Geplaatst op"
+  },
+  "management": {
+    "metaTitle": "Beheer - Vastgoedbeheer voor Verhuurders | MMRE",
+    "metaDescription": "Professioneel vastgoedbeheer in Amsterdam. Van huurincasso tot onderhoud, wij zorgen voor uw vastgoed.",
+    "title": "Vastgoedbeheer",
+    "subtitle": "Laat uw vastgoed professioneel beheren. Wij zorgen voor uw huurders, onderhoud en administratie zodat u zich nergens zorgen over hoeft te maken.",
+    "cta": "Vraag een offerte aan",
+    "servicesTitle": "Onze beheerdiensten",
+    "servicesSubtitle": "Volledig ontzorgd vastgoedbeheer voor eigenaren in Amsterdam",
+    "services": {
+      "tenantScreening": {
+        "title": "Huurdersselectie",
+        "description": "Grondige screening van potentiële huurders inclusief inkomensverificatie, referenties en achtergrondcontrole."
+      },
+      "rentCollection": {
+        "title": "Huurincasso",
+        "description": "Maandelijkse huurinning en financiële rapportage. Wij nemen contact op bij betalingsachterstanden."
+      },
+      "maintenance": {
+        "title": "Onderhoudsbeheer",
+        "description": "Coördinatie van alle reparaties en onderhoud. Van kleine klussen tot grote renovaties."
+      },
+      "legalCompliance": {
+        "title": "Juridische compliance",
+        "description": "Zorg dat uw verhuur voldoet aan alle wet- en regelgeving, inclusief huurprijsregulering en WWS."
+      },
+      "availability": {
+        "title": "24/7 beschikbaarheid",
+        "description": "Noodlijn voor huurders bij urgente problemen. Directe actie wanneer nodig."
+      }
+    },
+    "benefitsTitle": "Waarom kiezen voor MMRE beheer?",
+    "benefitsSubtitle": "Wij nemen het werk uit handen zodat u kunt genieten van uw investering",
+    "benefit1": "Maximale huuropbrengst door professionele verhuur",
+    "benefit2": "Geen gedoe met huurders of onderhoud",
+    "benefit3": "Volledige transparantie via online portaal",
+    "benefit4": "Juridische bescherming en compliance",
+    "benefit5": "Ervaren team met lokale marktkennis",
+    "benefit6": "Flexibele contracten, maandelijks opzegbaar",
+    "pricingTitle": "Tarieven",
+    "pricingPercentage": "5-8%",
+    "pricingNote": "van de maandelijkse huur",
+    "pricingDisclaimer": "Tarief afhankelijk van aantal woningen en gewenste diensten. Vraag een vrijblijvende offerte aan.",
+    "pricingCta": "Offerte aanvragen",
+    "ctaTitle": "Klaar om uw vastgoed te laten beheren?",
+    "ctaDescription": "Neem contact met ons op voor een vrijblijvend gesprek over uw situatie.",
+    "ctaContact": "Neem contact op"
   }
 }

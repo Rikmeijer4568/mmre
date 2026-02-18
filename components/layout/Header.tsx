@@ -197,6 +197,13 @@ export function Header() {
               {t('neighborhoods')}
             </Link>
             <Link
+              href="/management"
+              className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700
+                        hover:text-accent hover:bg-gray-50 transition-all duration-200"
+            >
+              {t('management')}
+            </Link>
+            <Link
               href="/about"
               className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700
                         hover:text-accent hover:bg-gray-50 transition-all duration-200"

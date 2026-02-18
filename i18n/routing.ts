@@ -21,6 +21,13 @@ export const routing = defineRouting({
       es: '/oferta/[slug]'
     },
 
+    // Management
+    '/management': {
+      en: '/management',
+      nl: '/beheer',
+      es: '/gestion'
+    },
+
     // Static pages
     '/about': '/about',
     '/contact': '/contact',

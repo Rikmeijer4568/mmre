@@ -18,6 +18,7 @@
     "learn": "Información",
     "offerings": "Oferta",
     "neighborhoods": "Barrios",
+    "management": "Gestión",
     "about": "Sobre nosotros",
     "contact": "Contacto",
     "homeFinding": "Búsqueda de vivienda",
@@ -937,5 +938,52 @@
     "whatsappCta": "WhatsApp",
     "propertyId": "ID de Propiedad",
     "publishedOn": "Publicado el"
+  },
+  "management": {
+    "metaTitle": "Gestión - Gestión de propiedades para propietarios | MMRE",
+    "metaDescription": "Gestión profesional de propiedades en Ámsterdam. Desde la recaudación de alquileres hasta el mantenimiento, cuidamos de su propiedad.",
+    "title": "Gestión de propiedades",
+    "subtitle": "Permítanos gestionar profesionalmente su propiedad. Nos encargamos de sus inquilinos, mantenimiento y administración para que no tenga que preocuparse de nada.",
+    "cta": "Solicitar presupuesto",
+    "servicesTitle": "Nuestros servicios de gestión",
+    "servicesSubtitle": "Gestión completa de propiedades para propietarios en Ámsterdam",
+    "services": {
+      "tenantScreening": {
+        "title": "Selección de inquilinos",
+        "description": "Selección exhaustiva de posibles inquilinos incluyendo verificación de ingresos, referencias y verificación de antecedentes."
+      },
+      "rentCollection": {
+        "title": "Cobro de alquileres",
+        "description": "Cobro mensual de alquileres e informes financieros. Hacemos seguimiento de cualquier atraso en pagos."
+      },
+      "maintenance": {
+        "title": "Gestión de mantenimiento",
+        "description": "Coordinación de todas las reparaciones y mantenimiento. Desde pequeños trabajos hasta grandes renovaciones."
+      },
+      "legalCompliance": {
+        "title": "Cumplimiento legal",
+        "description": "Aseguramos que su alquiler cumple con todas las leyes y regulaciones, incluyendo regulación de precios de alquiler y WWS."
+      },
+      "availability": {
+        "title": "Disponibilidad 24/7",
+        "description": "Línea de emergencia para inquilinos con problemas urgentes. Acción inmediata cuando sea necesario."
+      }
+    },
+    "benefitsTitle": "¿Por qué elegir la gestión de MMRE?",
+    "benefitsSubtitle": "Nosotros hacemos el trabajo para que usted pueda disfrutar de su inversión",
+    "benefit1": "Máximos ingresos por alquiler a través de arrendamiento profesional",
+    "benefit2": "Sin problemas con inquilinos o mantenimiento",
+    "benefit3": "Transparencia total a través del portal online",
+    "benefit4": "Protección legal y cumplimiento normativo",
+    "benefit5": "Equipo experimentado con conocimiento del mercado local",
+    "benefit6": "Contratos flexibles, cancelación mensual",
+    "pricingTitle": "Precios",
+    "pricingPercentage": "5-8%",
+    "pricingNote": "del alquiler mensual",
+    "pricingDisclaimer": "El precio depende del número de propiedades y servicios deseados. Solicite un presupuesto gratuito.",
+    "pricingCta": "Solicitar presupuesto",
+    "ctaTitle": "¿Listo para que gestionemos su propiedad?",
+    "ctaDescription": "Contáctenos para una conversación sin compromiso sobre su situación.",
+    "ctaContact": "Contáctenos"
   }
 }
