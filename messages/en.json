@@ -720,11 +720,10 @@
     "cta": "Choose this package",
     "verhuur": {
       "title": "Rental services",
-      "subtitle": "Choose the package that suits you",
+      "subtitle": "Everything included for a fixed price",
       "priceNote": "excl. VAT (fixed rate, no cure no pay)",
       "package1": {
-        "name": "Rental only",
-        "badge": "Online today",
+        "name": "Full-service rental",
         "feature1": "Listing on Funda and Pararius",
         "feature2": "Distribution in our network",
         "feature3": "Conducting viewings",
@@ -732,21 +731,9 @@
         "feature5": "Tenant screening",
         "feature6": "Rental agreement preparation",
         "feature7": "Check-in and inspection report",
-        "disclaimer": "* Professional photos must be provided by you"
-      },
-      "package2": {
-        "name": "Placement",
-        "feature1": "Everything from \"Rental Only\"",
-        "feature2": "Professional photo shoot",
-        "feature3": "Property video",
-        "feature4": "NEN 2580 measurement report"
-      },
-      "package3": {
-        "name": "All-in-one",
-        "feature1": "Everything from \"Placement\"",
-        "feature2": "Official energy label",
-        "feature3": "WWS point calculation",
-        "note": "Mandatory from May 29, 2026, including for monuments"
+        "feature8": "Professional photo shoot",
+        "feature9": "Property video",
+        "feature10": "NEN 2580 measurement report"
       },
       "startFee": {
         "label": "Start fee: €350,- excl. VAT",

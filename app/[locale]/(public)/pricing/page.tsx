@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
-import { Check, ArrowRight, Star, Home, Search, MessageSquare, Eye, FileText, Key, Wrench, Shield, Zap, Calculator, Briefcase } from 'lucide-react'
+import { Check, ArrowRight, Home, Search, MessageSquare, Eye, FileText, Key, Wrench, Shield, Calculator, Briefcase } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { getTranslations } from 'next-intl/server'
 
@@ -18,9 +18,8 @@ export default async function PricingPage() {
   const verhuurPackages = [
     {
       name: t('verhuur.package1.name'),
-      price: '€499,-',
+      price: '€1.249,-',
       priceNote: t('verhuur.priceNote'),
-      badge: t('verhuur.package1.badge'),
       features: [
         t('verhuur.package1.feature1'),
         t('verhuur.package1.feature2'),
@@ -29,31 +28,10 @@ export default async function PricingPage() {
         t('verhuur.package1.feature5'),
         t('verhuur.package1.feature6'),
         t('verhuur.package1.feature7'),
+        t('verhuur.package1.feature8'),
+        t('verhuur.package1.feature9'),
+        t('verhuur.package1.feature10'),
       ],
-      disclaimer: t('verhuur.package1.disclaimer'),
-    },
-    {
-      name: t('verhuur.package2.name'),
-      price: '€849,-',
-      priceNote: t('verhuur.priceNote'),
-      popular: true,
-      features: [
-        t('verhuur.package2.feature1'),
-        t('verhuur.package2.feature2'),
-        t('verhuur.package2.feature3'),
-        t('verhuur.package2.feature4'),
-      ],
-    },
-    {
-      name: t('verhuur.package3.name'),
-      price: '€1.249,-',
-      priceNote: t('verhuur.priceNote'),
-      features: [
-        t('verhuur.package3.feature1'),
-        t('verhuur.package3.feature2'),
-        t('verhuur.package3.feature3'),
-      ],
-      note: t('verhuur.package3.note'),
     },
   ]
 
@@ -136,73 +114,37 @@ export default async function PricingPage() {
             </p>
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-            {verhuurPackages.map((pkg, index) => (
-              <div
-                key={index}
-                className={`relative bg-white rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                  pkg.popular
-                    ? 'border-accent shadow-lg scale-105'
-                    : 'border-gray-200 hover:border-accent/50'
-                }`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1 bg-accent text-white text-sm font-semibold px-4 py-1.5 rounded-full">
-                      <Star className="h-4 w-4 fill-current" />
-                      {t('popular')}
-                    </span>
-                  </div>
-                )}
-
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {pkg.name}
-                  </h3>
-                  {pkg.badge && (
-                    <span className="inline-flex items-center gap-1.5 bg-amber-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
-                      <Zap className="h-3.5 w-3.5" />
-                      {pkg.badge}
-                    </span>
-                  )}
-                  <div className="text-4xl font-bold text-accent">
-                    {pkg.price}
-                  </div>
-                  <p className="text-sm text-gray-500 mt-1">
-                    {pkg.priceNote}
-                  </p>
+          {/* Pricing Card */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-lg bg-white rounded-2xl border-2 border-accent shadow-lg p-8">
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {verhuurPackages[0].name}
+                </h3>
+                <div className="text-4xl font-bold text-accent">
+                  {verhuurPackages[0].price}
                 </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {pkg.disclaimer && (
-                  <p className="text-sm text-gray-500 italic mb-6">
-                    {pkg.disclaimer}
-                  </p>
-                )}
-
-                {pkg.note && (
-                  <p className="text-sm text-amber-600 bg-amber-50 rounded-lg p-3 mb-6">
-                    {pkg.note}
-                  </p>
-                )}
-
-                <Button asChild className="w-full" variant={pkg.popular ? 'default' : 'outline'}>
-                  <Link href="/contact">
-                    {t('cta')}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                <p className="text-sm text-gray-500 mt-1">
+                  {verhuurPackages[0].priceNote}
+                </p>
               </div>
-            ))}
+
+              <ul className="space-y-3 mb-8 grid sm:grid-cols-2 gap-x-6">
+                {verhuurPackages[0].features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button asChild className="w-full" variant="default">
+                <Link href="/contact">
+                  {t('cta')}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
 
           {/* Starttarief Notice */}

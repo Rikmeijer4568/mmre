@@ -720,11 +720,10 @@
     "cta": "Kies dit pakket",
     "verhuur": {
       "title": "Verhuur",
-      "subtitle": "Kies het pakket dat bij je past",
+      "subtitle": "Alles inbegrepen voor een vaste prijs",
       "priceNote": "excl. btw (vast tarief, no cure no pay)",
       "package1": {
-        "name": "Alleen verhuur",
-        "badge": "Vandaag nog online",
+        "name": "Full-service verhuur",
         "feature1": "Plaatsing op Funda en Pararius",
         "feature2": "Verspreiding in ons netwerk",
         "feature3": "Uitvoeren van bezichtigingen",
@@ -732,21 +731,9 @@
         "feature5": "Screening van huurkandidaten",
         "feature6": "Opmaak huurovereenkomst",
         "feature7": "Check-in en inspectierapport",
-        "disclaimer": "* Professionele foto's dienen zelf aangeleverd te worden"
-      },
-      "package2": {
-        "name": "Plaatsing",
-        "feature1": "Alles van \"Alleen Verhuur\"",
-        "feature2": "Professionele fotoreportage",
-        "feature3": "Woningvideo",
-        "feature4": "NEN 2580 meetrapport"
-      },
-      "package3": {
-        "name": "Alles-in-één",
-        "feature1": "Alles van \"Plaatsing\"",
-        "feature2": "Officieel energielabel",
-        "feature3": "WWS-puntentelling",
-        "note": "Verplicht vanaf 29 mei 2026, ook voor monumenten"
+        "feature8": "Professionele fotoreportage",
+        "feature9": "Woningvideo",
+        "feature10": "NEN 2580 meetrapport"
       },
       "startFee": {
         "label": "Starttarief: €350,- excl. btw",
