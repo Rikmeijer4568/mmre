@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { Link } from '@/i18n/navigation'
-import { Check, ArrowRight, Home, Search, MessageSquare, Eye, FileText, Key, Wrench, Shield, Calculator, Briefcase } from 'lucide-react'
+import { Check, ArrowRight, Star, Home, Search, MessageSquare, Eye, FileText, Key, Wrench, Shield, Calculator, Briefcase } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { getTranslations } from 'next-intl/server'
 
