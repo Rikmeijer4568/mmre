@@ -28,7 +28,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block transition-opacity duration-200 hover:opacity-80">
               <Image
-                src="/images/Logo/Meijer Münninghoff Real Estate.svg"
+                src="/images/Logo/mmre-logo.svg"
                 alt="Meijer & Münninghoff Real Estate"
                 width={180}
                 height={50}

@@ -104,8 +104,7 @@ async function HeroSection() {
                 alt="MMRE Real Estate"
                 width={600}
                 height={500}
-                className="w-full h-auto drop-shadow-2xl"
-                style={{ mixBlendMode: 'multiply' }}
+                className="w-full h-auto drop-shadow-2xl brightness-0 invert"
                 priority
               />
             </div>
@@ -354,7 +353,7 @@ async function WhyChooseUsSection() {
         <div className="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
           <AnimatedSection>
             <span className="inline-block px-4 py-1.5 bg-primary-50 text-accent text-sm font-medium rounded-full mb-6">
-              Why MMRE
+              {t('whyChooseUsLabel')}
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
               {t('whyChooseUs')}

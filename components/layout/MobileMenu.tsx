@@ -8,7 +8,10 @@ import { X, ChevronDown, MessageCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { getWhatsAppLink } from '@/lib/whatsapp'
-import { huurNav, rentOutNav, learnNav, type NavItem } from '@/lib/navigation'
+import {
+  huurNavConfig, rentOutNavConfig, learnNavConfig,
+  type NavItem,
+} from '@/lib/navigation'
 import { LanguageSwitcher } from './LanguageSwitcher'
 
 interface MobileMenuProps {
@@ -68,6 +71,26 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const pathname = usePathname()
   const t = useTranslations('nav')
   const tCommon = useTranslations('common')
+  const tDesc = useTranslations('navDescriptions')
+
+  const huurNavItems: NavItem[] = huurNavConfig.map((c) => ({
+    name: t(c.nameKey as Parameters<typeof t>[0]),
+    description: tDesc(c.descKey as Parameters<typeof tDesc>[0]),
+    href: c.href,
+    icon: c.icon,
+  }))
+  const rentOutNavItems: NavItem[] = rentOutNavConfig.map((c) => ({
+    name: t(c.nameKey as Parameters<typeof t>[0]),
+    description: tDesc(c.descKey as Parameters<typeof tDesc>[0]),
+    href: c.href,
+    icon: c.icon,
+  }))
+  const learnNavItems: NavItem[] = learnNavConfig.map((c) => ({
+    name: t(c.nameKey as Parameters<typeof t>[0]),
+    description: tDesc(c.descKey as Parameters<typeof tDesc>[0]),
+    href: c.href,
+    icon: c.icon,
+  }))
   const previousPathname = useRef(pathname)
 
   // Close on route change (only when pathname actually changes)
@@ -104,7 +127,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <div className="flex items-center justify-between mb-6">
             <Link href="/" className="-m-1.5 p-1.5" onClick={onClose}>
               <Image
-                src="/images/Logo/Meijer Münninghoff Real Estate.svg"
+                src="/images/Logo/mmre-logo.svg"
                 alt="Meijer & Münninghoff Real Estate"
                 width={150}
                 height={40}
@@ -123,9 +146,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
           {/* Navigation */}
           <div className="space-y-0">
-            <Accordion label={t('rentIn')} items={huurNav} onClose={onClose} />
-            <Accordion label={t('rentOut')} items={rentOutNav} onClose={onClose} />
-            <Accordion label={t('learn')} items={learnNav} onClose={onClose} />
+            <Accordion label={t('rentIn')} items={huurNavItems} onClose={onClose} />
+            <Accordion label={t('rentOut')} items={rentOutNavItems} onClose={onClose} />
+            <Accordion label={t('learn')} items={learnNavItems} onClose={onClose} />
 
             {/* Direct links */}
             <div className="pt-3 space-y-1">

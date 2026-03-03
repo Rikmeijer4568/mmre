@@ -7,7 +7,10 @@ import { Menu, ChevronDown, MessageCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { getWhatsAppLink } from '@/lib/whatsapp'
-import { huurNav, rentOutNav, learnNav } from '@/lib/navigation'
+import {
+  huurNavConfig, rentOutNavConfig, learnNavConfig,
+  type NavItem,
+} from '@/lib/navigation'
 import { MegaMenu } from './MegaMenu'
 import { MobileMenu } from './MobileMenu'
 import { LanguageSwitcher } from './LanguageSwitcher'
@@ -17,6 +20,26 @@ type MenuPanel = 'rentIn' | 'rentOut' | 'learn' | null
 export function Header() {
   const t = useTranslations('nav')
   const tCommon = useTranslations('common')
+  const tDesc = useTranslations('navDescriptions')
+
+  const huurNavItems: NavItem[] = huurNavConfig.map((c) => ({
+    name: t(c.nameKey as Parameters<typeof t>[0]),
+    description: tDesc(c.descKey as Parameters<typeof tDesc>[0]),
+    href: c.href,
+    icon: c.icon,
+  }))
+  const rentOutNavItems: NavItem[] = rentOutNavConfig.map((c) => ({
+    name: t(c.nameKey as Parameters<typeof t>[0]),
+    description: tDesc(c.descKey as Parameters<typeof tDesc>[0]),
+    href: c.href,
+    icon: c.icon,
+  }))
+  const learnNavItems: NavItem[] = learnNavConfig.map((c) => ({
+    name: t(c.nameKey as Parameters<typeof t>[0]),
+    description: tDesc(c.descKey as Parameters<typeof tDesc>[0]),
+    href: c.href,
+    icon: c.icon,
+  }))
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activePanel, setActivePanel] = useState<MenuPanel>(null)
   const [scrolled, setScrolled] = useState(false)
@@ -84,7 +107,7 @@ export function Header() {
               className="-m-1.5 p-1.5 transition-opacity duration-200 hover:opacity-80"
             >
               <Image
-                src="/images/Logo/Meijer Münninghoff Real Estate.svg"
+                src="/images/Logo/mmre-logo.svg"
                 alt="Meijer & Münninghoff Real Estate"
                 width={180}
                 height={50}
@@ -238,17 +261,17 @@ export function Header() {
         onMouseLeave={handleMouseLeave}
       >
         <MegaMenu
-          items={huurNav}
+          items={huurNavItems}
           isOpen={activePanel === 'rentIn'}
           onClose={closePanel}
         />
         <MegaMenu
-          items={rentOutNav}
+          items={rentOutNavItems}
           isOpen={activePanel === 'rentOut'}
           onClose={closePanel}
         />
         <MegaMenu
-          items={learnNav}
+          items={learnNavItems}
           isOpen={activePanel === 'learn'}
           onClose={closePanel}
         />
