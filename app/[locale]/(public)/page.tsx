@@ -206,6 +206,53 @@ async function FeaturedPropertiesSection() {
   )
 }
 
+// Partners Banner
+async function PartnersSection() {
+  const t = await getTranslations('home')
+
+  const partners = [
+    { name: 'Funda',          src: '/images/Partners/logo funda.png' },
+    { name: 'Pararius',       src: '/images/Partners/Logo Pararius.avif' },
+    { name: 'Realite',        src: '/images/Partners/Logo Realite.png' },
+    { name: 'Easynuts',       src: '/images/Partners/Logo Easynuts.png' },
+    { name: 'Utility Direct', src: '/images/Partners/Logo Utility direct.webp' },
+    { name: 'Dirt Busters',   src: '/images/Partners/Logo dirt busters.webp' },
+    { name: 'Magic Movers',   src: '/images/Partners/Magic movers logo.webp' },
+  ]
+
+  return (
+    <section className="border-y border-gray-100 bg-gray-50/50 py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <AnimatedSection className="text-center mb-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+            {t('partnersLabel')}
+          </p>
+        </AnimatedSection>
+
+        <AnimatedContainer
+          variants={staggerContainer}
+          className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16"
+        >
+          {partners.map((partner) => (
+            <AnimatedItem key={partner.name}>
+              <div className="relative h-10 w-28 sm:h-12 sm:w-32 transition-all duration-300
+                              grayscale opacity-50 hover:grayscale-0 hover:opacity-100">
+                <Image
+                  src={partner.src}
+                  alt={partner.name}
+                  fill
+                  className="object-contain"
+                  sizes="128px"
+                />
+              </div>
+            </AnimatedItem>
+          ))}
+        </AnimatedContainer>
+      </div>
+    </section>
+  )
+}
+
 // How It Works Section
 async function HowItWorksSection() {
   const t = await getTranslations('home')
@@ -438,6 +485,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <FeaturedPropertiesSection />
+      <PartnersSection />
       <HowItWorksSection />
       <WhyChooseUsSection />
       <NeighborhoodsSection />
