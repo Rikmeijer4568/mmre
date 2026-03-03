@@ -211,13 +211,13 @@ async function PartnersSection() {
   const t = await getTranslations('home')
 
   const partners = [
-    { name: 'Funda',          src: '/images/Partners/logo funda.png' },
-    { name: 'Pararius',       src: '/images/Partners/Logo Pararius.avif' },
-    { name: 'Realite',        src: '/images/Partners/Logo Realite.png' },
-    { name: 'Easynuts',       src: '/images/Partners/Logo Easynuts.png' },
-    { name: 'Utility Direct', src: '/images/Partners/Logo Utility direct.webp' },
-    { name: 'Dirt Busters',   src: '/images/Partners/Logo dirt busters.webp' },
-    { name: 'Magic Movers',   src: '/images/Partners/Magic movers logo.webp' },
+    { name: 'Funda',          src: '/images/Partners/logo-funda.png' },
+    { name: 'Pararius',       src: '/images/Partners/logo-pararius.avif' },
+    { name: 'Realite',        src: '/images/Partners/logo-realite.png' },
+    { name: 'Easynuts',       src: '/images/Partners/logo-easynuts.png' },
+    { name: 'Utility Direct', src: '/images/Partners/logo-utility-direct.webp' },
+    { name: 'Dirt Busters',   src: '/images/Partners/logo-dirt-busters.webp' },
+    { name: 'Magic Movers',   src: '/images/Partners/logo-magic-movers.webp' },
   ]
 
   return (
