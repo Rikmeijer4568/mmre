@@ -6,6 +6,8 @@ import { ArrowRight, Home, Key, Users, Clock, Shield, Star, CheckCircle2 } from 
 import { GoogleReviews } from '@/components/sections/GoogleReviews'
 import { getTranslations } from 'next-intl/server'
 import { AnimatedSection, AnimatedContainer, AnimatedItem, fadeInUp, staggerContainer } from '@/components/ui/motion'
+import { prisma } from '@/lib/prisma'
+import { PropertyCard } from '@/components/property/PropertyCard'
 
 // Hero Section
 async function HeroSection() {
@@ -109,6 +111,96 @@ async function HeroSection() {
             </div>
           </AnimatedSection>
         </div>
+      </div>
+    </section>
+  )
+}
+
+// Featured Properties Section
+async function FeaturedPropertiesSection() {
+  const t = await getTranslations('home')
+
+  let properties: {
+    id: string
+    title: string
+    slug: string
+    address: string
+    city: string
+    neighborhood: string | null
+    price: number
+    bedrooms: number
+    bathrooms: number
+    area: number
+    images: string[]
+    available: boolean
+    featured: boolean
+  }[] = []
+
+  try {
+    properties = await prisma.property.findMany({
+      where: { publishedAt: { not: null } },
+      orderBy: [
+        { featured: 'desc' },
+        { publishedAt: 'desc' },
+      ],
+      take: 4,
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        address: true,
+        city: true,
+        neighborhood: true,
+        price: true,
+        bedrooms: true,
+        bathrooms: true,
+        area: true,
+        images: true,
+        available: true,
+        featured: true,
+      },
+    })
+  } catch {
+    // Database not available during build/preview — skip section
+    return null
+  }
+
+  if (properties.length === 0) return null
+
+  return (
+    <section className="section-padding-lg">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <AnimatedSection className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+            {t('featuredProperties')}
+          </h2>
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            {t('featuredPropertiesSubtitle')}
+          </p>
+        </AnimatedSection>
+
+        {/* Property grid */}
+        <AnimatedContainer
+          variants={staggerContainer}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+        >
+          {properties.map((property) => (
+            <AnimatedItem key={property.id}>
+              <PropertyCard property={property} />
+            </AnimatedItem>
+          ))}
+        </AnimatedContainer>
+
+        {/* CTA button */}
+        <AnimatedSection delay={0.4} className="text-center mt-12">
+          <Button size="lg" asChild>
+            <Link href="/offerings">
+              {t('viewAllProperties')}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </AnimatedSection>
       </div>
     </section>
   )
@@ -345,6 +437,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <FeaturedPropertiesSection />
       <HowItWorksSection />
       <WhyChooseUsSection />
       <NeighborhoodsSection />

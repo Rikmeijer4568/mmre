@@ -86,7 +86,10 @@
     "yearsExperience": "Years of Experience",
     "exploreNeighborhoods": "Explore Neighborhoods",
     "exploreNeighborhoodsSubtitle": "Discover the best areas to live in Amsterdam",
-    "viewAllNeighborhoods": "View All Neighborhoods"
+    "viewAllNeighborhoods": "View All Neighborhoods",
+    "featuredProperties": "Available Properties",
+    "featuredPropertiesSubtitle": "Browse our latest rental properties in Amsterdam",
+    "viewAllProperties": "View all properties"
   },
   "footer": {
     "tagline": "Meijer & Münninghoff Real Estate - Your trusted partner for home finding and relocation services in Amsterdam.",
