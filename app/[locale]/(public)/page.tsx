@@ -235,16 +235,14 @@ async function PartnersSection() {
         >
           {partners.map((partner) => (
             <AnimatedItem key={partner.name}>
-              <div className="relative h-10 w-28 sm:h-12 sm:w-32 transition-all duration-300
-                              grayscale opacity-50 hover:grayscale-0 hover:opacity-100">
-                <Image
-                  src={partner.src}
-                  alt={partner.name}
-                  fill
-                  className="object-contain"
-                  sizes="128px"
-                />
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={partner.src}
+                alt={partner.name}
+                className="h-8 sm:h-10 w-auto max-w-[130px] object-contain
+                           grayscale opacity-50 transition-all duration-300
+                           hover:grayscale-0 hover:opacity-100"
+              />
             </AnimatedItem>
           ))}
         </AnimatedContainer>
