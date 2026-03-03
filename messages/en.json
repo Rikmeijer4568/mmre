@@ -76,7 +76,7 @@
     "landlordStep3": "Receive reliable tenants and ongoing support",
     "startYourSearch": "Start Your Search",
     "getRentalEstimate": "Get Rental Estimate",
-    "whyChooseUsLabel": "Why MMRE",
+    "whyChooseUsLabel": "Our approach",
     "whyChooseUs": "Why Choose MMRE?",
     "whyChooseUsText": "With years of experience in the Amsterdam rental market, we understand what expats and landlords need. Our personal approach and dedication to service sets us apart.",
     "personalGuidance": "Personal guidance from start to finish",
@@ -103,7 +103,8 @@
     "faq": "FAQ",
     "privacyPolicy": "Privacy Policy",
     "termsConditions": "Terms & Conditions",
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "All rights reserved.",
+    "newsletterDescription": "Get the latest updates on Amsterdam real estate."
   },
   "about": {
     "title": "About Meijer & Münninghoff",

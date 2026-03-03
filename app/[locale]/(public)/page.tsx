@@ -98,13 +98,13 @@ async function HeroSection() {
 
           {/* Right column - Hero image */}
           <AnimatedSection variants={fadeInUp} delay={0.2} className="hidden lg:block">
-            <div className="relative">
+            <div className="relative rounded-3xl overflow-hidden bg-[#163d35] shadow-2xl">
               <Image
                 src="/images/Header/Header.png"
                 alt="MMRE Real Estate"
                 width={600}
                 height={500}
-                className="w-full h-auto drop-shadow-2xl brightness-0 invert"
+                className="w-full h-auto brightness-0 invert"
                 priority
               />
             </div>

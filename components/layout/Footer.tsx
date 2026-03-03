@@ -3,9 +3,9 @@
 import { Link } from '@/i18n/navigation'
 import NextLink from 'next/link'
 import Image from 'next/image'
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
 import { NewsletterForm } from '@/components/forms/NewsletterForm'
-import { footerNav } from '@/lib/navigation'
+import { useTranslations } from 'next-intl'
 
 const socialLinks = [
   { name: 'Facebook', icon: Facebook, href: '#' },
@@ -14,6 +14,52 @@ const socialLinks = [
 ]
 
 export function Footer() {
+  const t = useTranslations('footer')
+  const tNav = useTranslations('nav')
+
+  const footerColumns = [
+    {
+      label: t('tenants'),
+      items: [
+        { name: tNav('homeFinding'),  href: '/services/home-finding' },
+        { name: tNav('relocation'),   href: '/services/relocation' },
+        { name: tNav('settlingIn'),   href: '/services/settling-in' },
+        { name: tNav('immigration'),  href: '/services/immigration' },
+        { name: tNav('corporate'),    href: '/services/corporate' },
+      ],
+    },
+    {
+      label: t('landlords'),
+      items: [
+        { name: tNav('rentOut'),              href: '/rent-out' },
+        { name: tNav('wwsPointCalculation'),  href: '/rent-out/services/wws-point-calculation' },
+        { name: tNav('energyLabel'),          href: '/rent-out/services/energy-label' },
+        { name: tNav('nen2580'),              href: '/rent-out/services/nen-2580' },
+        { name: tNav('rentalCompliance'),     href: '/rent-out/services/rental-compliance' },
+      ],
+    },
+    {
+      label: t('learn'),
+      items: [
+        { name: tNav('whatIsRelocation'),  href: '/what-is-relocation' },
+        { name: tNav('whatIsHomeFinding'), href: '/what-is-home-finding' },
+        { name: tNav('howWeWork'),         href: '/how-we-work' },
+        { name: tNav('pricing'),           href: '/pricing' },
+        { name: tNav('neighborhoods'),     href: '/neighborhoods' },
+      ],
+    },
+    {
+      label: t('company'),
+      items: [
+        { name: tNav('about'),        href: '/about' },
+        { name: tNav('contact'),      href: '/contact' },
+        { name: t('faq'),             href: '/faq' },
+        { name: t('privacyPolicy'),   href: '/privacy' },
+        { name: t('termsConditions'), href: '/terms' },
+      ],
+    },
+  ]
+
   return (
     <footer className="relative bg-gray-900 text-white overflow-hidden">
       {/* Subtle gradient overlay */}
@@ -36,7 +82,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-6 text-gray-400 text-sm leading-relaxed max-w-md">
-              Meijer & Münninghoff Real Estate - Your trusted partner for home finding and relocation services in Amsterdam.
+              {t('tagline')}
             </p>
 
             {/* Contact info */}
@@ -63,19 +109,19 @@ export function Footer() {
 
             {/* Newsletter */}
             <div className="mt-8 p-6 bg-gray-800/50 rounded-2xl border border-gray-700/50">
-              <h3 className="text-sm font-semibold text-white mb-3">Subscribe to our newsletter</h3>
-              <p className="text-gray-400 text-xs mb-4">Get the latest updates on Amsterdam real estate.</p>
+              <h3 className="text-sm font-semibold text-white mb-3">{t('subscribeNewsletter')}</h3>
+              <p className="text-gray-400 text-xs mb-4">{t('newsletterDescription')}</p>
               <NewsletterForm />
             </div>
           </div>
 
-          {/* Dynamic columns from navigation.ts */}
-          {footerNav.map((group) => (
+          {/* Translated nav columns */}
+          {footerColumns.map((group) => (
             <div key={group.label}>
               <h3 className="text-sm font-semibold text-white mb-5 tracking-wide">{group.label}</h3>
               <ul className="space-y-3.5">
                 {group.items.map((link) => (
-                  <li key={link.name}>
+                  <li key={link.href}>
                     <NextLink
                       href={link.href}
                       className="text-gray-400 hover:text-white text-sm transition-all duration-200
@@ -114,15 +160,15 @@ export function Footer() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
               <div className="flex items-center gap-4 text-sm text-gray-400">
                 <Link href="/privacy" className="hover:text-white transition-colors duration-200">
-                  Privacy Policy
+                  {t('privacyPolicy')}
                 </Link>
                 <span className="text-gray-600">·</span>
                 <Link href="/terms" className="hover:text-white transition-colors duration-200">
-                  Terms & Conditions
+                  {t('termsConditions')}
                 </Link>
               </div>
               <p className="text-gray-500 text-sm">
-                &copy; {new Date().getFullYear()} MMRE. All rights reserved.
+                &copy; {new Date().getFullYear()} MMRE. {t('allRightsReserved')}
               </p>
             </div>
           </div>

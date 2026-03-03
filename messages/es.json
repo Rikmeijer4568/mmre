@@ -76,7 +76,7 @@
     "landlordStep3": "Reciba inquilinos confiables y soporte continuo",
     "startYourSearch": "Comience su búsqueda",
     "getRentalEstimate": "Obtener estimación de alquiler",
-    "whyChooseUsLabel": "Por qué MMRE",
+    "whyChooseUsLabel": "Nuestro enfoque",
     "whyChooseUs": "¿Por qué elegir MMRE?",
     "whyChooseUsText": "Con años de experiencia en el mercado de alquiler de Ámsterdam, entendemos lo que necesitan los expatriados y propietarios. Nuestro enfoque personal y dedicación al servicio nos distingue.",
     "personalGuidance": "Orientación personal de principio a fin",
@@ -103,7 +103,8 @@
     "faq": "Preguntas frecuentes",
     "privacyPolicy": "Política de privacidad",
     "termsConditions": "Términos y condiciones",
-    "allRightsReserved": "Todos los derechos reservados."
+    "allRightsReserved": "Todos los derechos reservados.",
+    "newsletterDescription": "Recibe las últimas actualizaciones sobre el mercado inmobiliario de Ámsterdam."
   },
   "about": {
     "title": "Sobre Meijer & Münninghoff",
