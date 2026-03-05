@@ -139,8 +139,8 @@ async function FeaturedPropertiesSection() {
     properties = await prisma.property.findMany({
       where: { publishedAt: { not: null } },
       orderBy: [
-        { featured: 'desc' },
-        { publishedAt: 'desc' },
+        { sortOrder: 'asc' },
+        { publishedAt: 'asc' },
       ],
       take: 4,
       select: {

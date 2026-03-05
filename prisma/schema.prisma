@@ -273,6 +273,9 @@ model Property {
   available   Boolean  @default(true)
   featured    Boolean  @default(false)
 
+  // Display order (lower = first)
+  sortOrder   Int      @default(0)
+
   // Timestamps
   publishedAt DateTime?
   createdAt   DateTime @default(now())

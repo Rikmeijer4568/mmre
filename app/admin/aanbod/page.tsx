@@ -9,6 +9,23 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { ImageUploader } from '@/components/admin/ImageUploader'
 import {
+  DndContext,
+  closestCenter,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+  type DragEndEvent,
+} from '@dnd-kit/core'
+import {
+  SortableContext,
+  sortableKeyboardCoordinates,
+  useSortable,
+  verticalListSortingStrategy,
+  arrayMove,
+} from '@dnd-kit/sortable'
+import { CSS } from '@dnd-kit/utilities'
+import {
   ArrowLeft,
   Plus,
   Edit2,
@@ -26,6 +43,7 @@ import {
   MapPin,
   Euro,
   Loader2,
+  GripVertical,
 } from 'lucide-react'
 
 interface Property {
@@ -45,6 +63,7 @@ interface Property {
   available: boolean
   featured: boolean
   publishedAt: string | null
+  sortOrder: number
   createdAt: string
   updatedAt: string
 }
@@ -85,6 +104,176 @@ const emptyForm: PropertyForm = {
   published: false,
 }
 
+// ── Sortable row ─────────────────────────────────────────────────────────────
+
+interface SortableRowProps {
+  property: Property
+  onTogglePublished: (p: Property) => void
+  onToggleFeatured: (p: Property) => void
+  onToggleAvailable: (p: Property) => void
+  onEdit: (p: Property) => void
+  onDelete: (id: string) => void
+}
+
+function SortablePropertyRow({
+  property,
+  onTogglePublished,
+  onToggleFeatured,
+  onToggleAvailable,
+  onEdit,
+  onDelete,
+}: SortableRowProps) {
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: property.id })
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+    zIndex: isDragging ? 10 : undefined,
+  }
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className="p-4 hover:bg-gray-50 bg-white"
+    >
+      <div className="flex items-start gap-3">
+        {/* Drag handle */}
+        <button
+          {...attributes}
+          {...listeners}
+          className="mt-6 cursor-grab active:cursor-grabbing text-gray-300 hover:text-gray-500 flex-shrink-0"
+          title="Versleep om volgorde aan te passen"
+        >
+          <GripVertical className="h-5 w-5" />
+        </button>
+
+        {/* Thumbnail */}
+        <div className="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+          {property.images[0] ? (
+            <Image
+              src={property.images[0]}
+              alt={property.title}
+              width={96}
+              height={96}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-gray-400">
+              <Home className="h-8 w-8" />
+            </div>
+          )}
+        </div>
+
+        {/* Info */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h3 className="font-semibold text-gray-900 truncate">
+              {property.title}
+            </h3>
+            {!property.publishedAt && (
+              <span className="px-2 py-0.5 bg-yellow-100 text-yellow-700 text-xs rounded">
+                Draft
+              </span>
+            )}
+            {property.featured && (
+              <span className="px-2 py-0.5 bg-accent/10 text-accent text-xs rounded">
+                Featured
+              </span>
+            )}
+            {!property.available && (
+              <span className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">
+                Rented
+              </span>
+            )}
+          </div>
+          <div className="flex items-center gap-1 text-sm text-gray-500 mt-1">
+            <MapPin className="h-3.5 w-3.5" />
+            {property.address},{property.neighborhood && ` ${property.neighborhood},`} {property.city}
+          </div>
+          <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
+            <span className="font-medium text-accent">€{property.price.toLocaleString()}/mo</span>
+            <span className="flex items-center gap-1">
+              <Bed className="h-3.5 w-3.5" />
+              {property.bedrooms}
+            </span>
+            <span className="flex items-center gap-1">
+              <Bath className="h-3.5 w-3.5" />
+              {property.bathrooms}
+            </span>
+            <span className="flex items-center gap-1">
+              <Maximize className="h-3.5 w-3.5" />
+              {property.area} m²
+            </span>
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div className="flex items-center gap-1">
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={() => onTogglePublished(property)}
+            title={property.publishedAt ? 'Unpublish' : 'Publish'}
+          >
+            {property.publishedAt ? (
+              <EyeOff className="h-4 w-4" />
+            ) : (
+              <Eye className="h-4 w-4" />
+            )}
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={() => onToggleFeatured(property)}
+            title={property.featured ? 'Remove featured' : 'Mark as featured'}
+          >
+            {property.featured ? (
+              <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+            ) : (
+              <StarOff className="h-4 w-4" />
+            )}
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={() => onToggleAvailable(property)}
+            title={property.available ? 'Mark as rented' : 'Mark as available'}
+            className={property.available ? 'text-green-600' : 'text-gray-400'}
+          >
+            <Home className="h-4 w-4" />
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            onClick={() => onEdit(property)}
+          >
+            <Edit2 className="h-4 w-4" />
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            className="text-red-600 hover:text-red-700"
+            onClick={() => onDelete(property.id)}
+          >
+            <Trash2 className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ── Main page ─────────────────────────────────────────────────────────────────
+
 export default function AanbodAdminPage() {
   const [properties, setProperties] = useState<Property[]>([])
   const [loading, setLoading] = useState(true)
@@ -93,6 +282,11 @@ export default function AanbodAdminPage() {
   const [isCreating, setIsCreating] = useState(false)
   const [form, setForm] = useState<PropertyForm>(emptyForm)
   const [error, setError] = useState<string | null>(null)
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
+  )
 
   useEffect(() => {
     fetchProperties()
@@ -109,6 +303,22 @@ export default function AanbodAdminPage() {
     } finally {
       setLoading(false)
     }
+  }
+
+  const handleDragEnd = async (event: DragEndEvent) => {
+    const { active, over } = event
+    if (!over || active.id === over.id) return
+
+    const oldIndex = properties.findIndex(p => p.id === active.id)
+    const newIndex = properties.findIndex(p => p.id === over.id)
+    const reordered = arrayMove(properties, oldIndex, newIndex)
+    setProperties(reordered)
+
+    await fetch('/api/properties/reorder', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ids: reordered.map(p => p.id) }),
+    })
   }
 
   const propertyToForm = (property: Property): PropertyForm => ({
@@ -199,8 +409,7 @@ export default function AanbodAdminPage() {
         })
         if (!res.ok) {
           const errorData = await res.json().catch(() => ({}))
-          const errorMsg = errorData.details || errorData.error || 'Failed to create property'
-          throw new Error(errorMsg)
+          throw new Error(errorData.details || errorData.error || 'Failed to create property')
         }
       } else if (editingId) {
         const res = await fetch(`/api/properties/${editingId}`, {
@@ -210,8 +419,7 @@ export default function AanbodAdminPage() {
         })
         if (!res.ok) {
           const errorData = await res.json().catch(() => ({}))
-          const errorMsg = errorData.details || errorData.error || 'Failed to update property'
-          throw new Error(errorMsg)
+          throw new Error(errorData.details || errorData.error || 'Failed to update property')
         }
       }
 
@@ -227,7 +435,6 @@ export default function AanbodAdminPage() {
 
   const deleteProperty = async (id: string) => {
     if (!confirm('Are you sure you want to delete this property?')) return
-
     try {
       const res = await fetch(`/api/properties/${id}`, { method: 'DELETE' })
       if (!res.ok) throw new Error('Failed to delete')
@@ -525,125 +732,30 @@ export default function AanbodAdminPage() {
               <p>No properties yet. Click "Add Property" to create one.</p>
             </div>
           ) : (
-            <div className="divide-y">
-              {properties.map((property) => (
-                <div key={property.id} className="p-4 hover:bg-gray-50">
-                  <div className="flex items-start gap-4">
-                    {/* Thumbnail */}
-                    <div className="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
-                      {property.images[0] ? (
-                        <Image
-                          src={property.images[0]}
-                          alt={property.title}
-                          width={96}
-                          height={96}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center text-gray-400">
-                          <Home className="h-8 w-8" />
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Info */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <h3 className="font-semibold text-gray-900 truncate">
-                          {property.title}
-                        </h3>
-                        {!property.publishedAt && (
-                          <span className="px-2 py-0.5 bg-yellow-100 text-yellow-700 text-xs rounded">
-                            Draft
-                          </span>
-                        )}
-                        {property.featured && (
-                          <span className="px-2 py-0.5 bg-accent/10 text-accent text-xs rounded">
-                            Featured
-                          </span>
-                        )}
-                        {!property.available && (
-                          <span className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">
-                            Rented
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-1 text-sm text-gray-500 mt-1">
-                        <MapPin className="h-3.5 w-3.5" />
-                        {property.address}, {property.neighborhood && `${property.neighborhood}, `}{property.city}
-                      </div>
-                      <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
-                        <span className="font-medium text-accent">€{property.price.toLocaleString()}/mo</span>
-                        <span className="flex items-center gap-1">
-                          <Bed className="h-3.5 w-3.5" />
-                          {property.bedrooms}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Bath className="h-3.5 w-3.5" />
-                          {property.bathrooms}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Maximize className="h-3.5 w-3.5" />
-                          {property.area} m²
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Actions */}
-                    <div className="flex items-center gap-1">
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        onClick={() => togglePublished(property)}
-                        title={property.publishedAt ? 'Unpublish' : 'Publish'}
-                      >
-                        {property.publishedAt ? (
-                          <EyeOff className="h-4 w-4" />
-                        ) : (
-                          <Eye className="h-4 w-4" />
-                        )}
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        onClick={() => toggleFeatured(property)}
-                        title={property.featured ? 'Remove featured' : 'Mark as featured'}
-                      >
-                        {property.featured ? (
-                          <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                        ) : (
-                          <StarOff className="h-4 w-4" />
-                        )}
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        onClick={() => toggleAvailable(property)}
-                        title={property.available ? 'Mark as rented' : 'Mark as available'}
-                        className={property.available ? 'text-green-600' : 'text-gray-400'}
-                      >
-                        <Home className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        onClick={() => startEdit(property)}
-                      >
-                        <Edit2 className="h-4 w-4" />
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        className="text-red-600 hover:text-red-700"
-                        onClick={() => deleteProperty(property.id)}
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
+            <DndContext
+              sensors={sensors}
+              collisionDetection={closestCenter}
+              onDragEnd={handleDragEnd}
+            >
+              <SortableContext
+                items={properties.map(p => p.id)}
+                strategy={verticalListSortingStrategy}
+              >
+                <div className="divide-y">
+                  {properties.map((property) => (
+                    <SortablePropertyRow
+                      key={property.id}
+                      property={property}
+                      onTogglePublished={togglePublished}
+                      onToggleFeatured={toggleFeatured}
+                      onToggleAvailable={toggleAvailable}
+                      onEdit={startEdit}
+                      onDelete={deleteProperty}
+                    />
+                  ))}
                 </div>
-              ))}
-            </div>
+              </SortableContext>
+            </DndContext>
           )}
         </CardContent>
       </Card>
@@ -652,8 +764,9 @@ export default function AanbodAdminPage() {
         <CardContent className="p-4">
           <p className="text-sm text-gray-600">
             <strong>Tips:</strong>
+            <br />• Sleep het <GripVertical className="inline h-3.5 w-3.5" /> icoon om de volgorde aan te passen
             <br />• Click the eye icon to publish/unpublish a property
-            <br />• Click the star icon to feature a property (shown first in listings)
+            <br />• Click the star icon to feature a property
             <br />• Click the house icon to toggle availability (available/rented)
             <br />• Properties must be published to appear on the website
           </p>

@@ -25,8 +25,8 @@ async function getProperties() {
         publishedAt: { not: null },
       },
       orderBy: [
-        { featured: 'desc' },
-        { publishedAt: 'desc' },
+        { sortOrder: 'asc' },
+        { publishedAt: 'asc' },
       ],
       select: {
         id: true,
