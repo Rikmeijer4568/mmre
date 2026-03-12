@@ -29,7 +29,7 @@ function TermsNL() {
         <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. Partijen en definities</h2>
         <p className="text-gray-600 mb-4">In deze Algemene Voorwaarden wordt verstaan onder:</p>
         <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-          <li><strong>MMRE:</strong> Meijer &amp; Münninghoff Real Estate, gevestigd aan de Kierkegaardstraat 25, 1185 AH Amstelveen, ingeschreven in het Handelsregister van de Kamer van Koophandel onder nummer 95691553, handelend als erkend NVM-makelaar.</li>
+          <li><strong>MMRE:</strong> Meijer &amp; Münninghoff Real Estate, gevestigd aan de Kierkegaardstraat 25, 1185 AH Amstelveen, ingeschreven in het Handelsregister van de Kamer van Koophandel onder nummer 95691553.</li>
           <li><strong>Opdrachtgever:</strong> de natuurlijke of rechtspersoon die MMRE opdracht geeft tot het verrichten van diensten.</li>
           <li><strong>Opdracht tot Dienstverlening:</strong> de schriftelijke overeenkomst (inclusief eventuele bijlagen) die MMRE en Opdrachtgever aangaan en waarin de precieze diensten, tarieven en looptijd zijn vastgelegd.</li>
           <li><strong>Verhuurder:</strong> Opdrachtgever die een woning via MMRE wenst te verhuren.</li>
@@ -178,7 +178,7 @@ function TermsEN() {
         <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. Parties and Definitions</h2>
         <p className="text-gray-600 mb-4">In these Terms and Conditions, the following definitions apply:</p>
         <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-          <li><strong>MMRE:</strong> Meijer &amp; Münninghoff Real Estate, registered at Kierkegaardstraat 25, 1185 AH Amstelveen, registered with the Dutch Chamber of Commerce (KvK) under number 95691553, operating as a certified NVM real estate agent.</li>
+          <li><strong>MMRE:</strong> Meijer &amp; Münninghoff Real Estate, registered at Kierkegaardstraat 25, 1185 AH Amstelveen, registered with the Dutch Chamber of Commerce (KvK) under number 95691553.</li>
           <li><strong>Client:</strong> the natural person or legal entity that engages MMRE to perform services.</li>
           <li><strong>Service Agreement:</strong> the written agreement (including any annexes) entered into by MMRE and the Client, specifying the exact services, fees, and duration.</li>
           <li><strong>Landlord:</strong> a Client who wishes to rent out a property through MMRE.</li>
@@ -327,7 +327,7 @@ function TermsES() {
         <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. Partes y definiciones</h2>
         <p className="text-gray-600 mb-4">En estos Términos y Condiciones se entiende por:</p>
         <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-          <li><strong>MMRE:</strong> Meijer &amp; Münninghoff Real Estate, con domicilio en Kierkegaardstraat 25, 1185 AH Amstelveen (Países Bajos), inscrita en el Registro Mercantil neerlandés (KvK) con el número 95691553, actuando como agente inmobiliario certificado por NVM.</li>
+          <li><strong>MMRE:</strong> Meijer &amp; Münninghoff Real Estate, con domicilio en Kierkegaardstraat 25, 1185 AH Amstelveen (Países Bajos), inscrita en el Registro Mercantil neerlandés (KvK) con el número 95691553.</li>
           <li><strong>Cliente:</strong> la persona física o jurídica que encarga a MMRE la prestación de servicios.</li>
           <li><strong>Contrato de Servicios:</strong> el acuerdo escrito (incluidos los anexos) suscrito entre MMRE y el Cliente, en el que se detallan los servicios, honorarios y duración acordados.</li>
           <li><strong>Arrendador:</strong> Cliente que desea arrendar un inmueble a través de MMRE.</li>
