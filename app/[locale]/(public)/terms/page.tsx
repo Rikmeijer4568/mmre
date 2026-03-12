@@ -10,7 +10,7 @@ export default function TermsPage() {
     <div className="py-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Algemene Voorwaarden</h1>
-        <p className="text-gray-500 mb-8">Versie maart 2025 &mdash; Meijer &amp; Münninghoff Real Estate B.V.</p>
+        <p className="text-gray-500 mb-8">Versie maart 2025 &mdash; Meijer &amp; Münninghoff Real Estate &mdash; KvK 95691553</p>
 
         <div className="prose prose-gray max-w-none">
 
@@ -20,7 +20,7 @@ export default function TermsPage() {
             In deze Algemene Voorwaarden wordt verstaan onder:
           </p>
           <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
-            <li><strong>MMRE:</strong> Meijer &amp; Münninghoff Real Estate B.V., geregistreerd bij de Kamer van Koophandel, handelend als erkend NVM-makelaar.</li>
+            <li><strong>MMRE:</strong> Meijer &amp; Münninghoff Real Estate, gevestigd aan de Kierkegaardstraat 25, 1185 AH Amstelveen, ingeschreven in het Handelsregister van de Kamer van Koophandel onder nummer 95691553, handelend als erkend NVM-makelaar.</li>
             <li><strong>Opdrachtgever:</strong> de natuurlijke of rechtspersoon die MMRE opdracht geeft tot het verrichten van diensten.</li>
             <li><strong>Opdracht tot Dienstverlening:</strong> de schriftelijke overeenkomst (inclusief eventuele bijlagen) die MMRE en Opdrachtgever aangaan en waarin de precieze diensten, tarieven en looptijd zijn vastgelegd.</li>
             <li><strong>Verhuurder:</strong> Opdrachtgever die een woning via MMRE wenst te verhuren.</li>
@@ -183,8 +183,11 @@ export default function TermsPage() {
             Voor vragen over deze Algemene Voorwaarden kunt u contact opnemen via:
           </p>
           <p className="text-gray-600 mb-4">
-            <strong>E-mail:</strong> info@mmre.nl<br />
-            <strong>Adres:</strong> Amsterdam, Nederland
+            <strong>Meijer &amp; Münninghoff Real Estate</strong><br />
+            Kierkegaardstraat 25<br />
+            1185 AH Amstelveen<br />
+            KvK: 95691553<br />
+            <strong>E-mail:</strong> info@mmre.nl
           </p>
 
         </div>
